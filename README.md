@@ -22,52 +22,52 @@
 ## 📸 App Screenshots
 
 ### Login & Authentication
-<img src="images/login screen.png" alt="Login Screen - User authentication with email and password" width="60%">
+<img src="images/login screen.png" alt="Login Screen - User authentication with email and password" width="50%">
 
 *Login screen with secure authentication and modern Material 3 design*
 
 ### Sign Up
-<img src="images/signup screen.png" alt="Sign Up Screen - New user registration" width="60%">
+<img src="images/signup screen.png" alt="Sign Up Screen - New user registration" width="50%">
 
 *User registration screen for creating new accounts*
 
 ### Home Screen
-<img src="images/home screen.png" alt="Home Screen - Main dashboard with featured recipes and quick actions" width="60%">
+<img src="images/home screen.png" alt="Home Screen - Main dashboard with featured recipes and quick actions" width="50%">
 
 *Main dashboard displaying featured recipes, quick access to discover recipes, and instant meal maker*
 
 ### Recipe Search & Discovery
-<img src="images/recipe search screen.png" alt="Recipe Search Screen - Browse and filter recipes by various criteria" width="60%">
+<img src="images/recipe search screen.png" alt="Recipe Search Screen - Browse and filter recipes by various criteria" width="50%">
 
 *Recipe discovery screen with search functionality, diet filters, and intolerance options*
 
 ### Recipe Details
-<img src="images/recipe detail.png" alt="Recipe Detail Screen - Comprehensive recipe information with ingredients and instructions" width="60%">
+<img src="images/recipe detail.png" alt="Recipe Detail Screen - Comprehensive recipe information with ingredients and instructions" width="50%">
 
 *Detailed recipe view showing ingredients, cooking instructions, nutritional information, and AI-generated summary*
 
 ### Weekly Meal Plan
-<img src="images/weekly meal plan.png" alt="Weekly Meal Plan - Organize meals for the entire week" width="60%">
+<img src="images/weekly meal plan.png" alt="Weekly Meal Plan - Organize meals for the entire week" width="50%">
 
 *Weekly meal planner with organized breakfast, lunch, and dinner slots for each day*
 
 ### Shopping List
-<img src="images/AI generated shoping list.png" alt="Shopping List - AI-optimized shopping list with checkboxes" width="60%">
+<img src="images/AI generated shoping list.png" alt="Shopping List - AI-optimized shopping list with checkboxes" width="50%">
 
 *Smart shopping list with AI optimization, organized by store sections, and check-off functionality*
 
 ### AI-Generated Recipe Summary
-<img src="images/AI-generated recipe summary.png" alt="AI Recipe Summary - OpenAI-powered recipe description" width="60%">
+<img src="images/AI-generated recipe summary.png" alt="AI Recipe Summary - OpenAI-powered recipe description" width="50%">
 
 *AI-generated recipe summary providing engaging descriptions and key highlights*
 
 ### Profile Screen
-<img src="images/profile screen.png" alt="Profile Screen - User profile with dietary preferences" width="60%">
+<img src="images/profile screen.png" alt="Profile Screen - User profile with dietary preferences" width="50%">
 
 *User profile displaying personal information and dietary preferences*
 
 ### Settings
-<img src="images/settings screen.png" alt="Settings Screen - App configuration and preferences" width="60%">
+<img src="images/settings screen.png" alt="Settings Screen - App configuration and preferences" width="50%">
 
 *Settings screen for managing dietary restrictions, calorie goals, theme preferences, and notifications*
 
@@ -84,8 +84,8 @@ This section maps each grading criterion to its specific implementation in the c
 **Screen**: All screens
 
 **Code Reference**: 
-- [MainActivity.kt#L27-L37](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/MainActivity.kt#L27-L37) - Single Activity setup with Navigation
-- [NavGraph.kt#L34-L122](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/presentation/navigation/NavGraph.kt#L34-L122) - Navigation graph definition
+- [MainActivity.kt#L27-L37](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/MainActivity.kt#L27-L37) - Single Activity setup with Navigation
+- [NavGraph.kt#L34-L122](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/presentation/navigation/NavGraph.kt#L34-L122) - Navigation graph definition
 
 **Code Snippet**:
 ```kotlin
@@ -130,10 +130,10 @@ fun NavGraph(
 **Screen**: All screens (data persistence layer)
 
 **Code Reference**:
-- [MealMateDatabase.kt#L18-L33](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/local/MealMateDatabase.kt#L18-L33) - Database definition
-- [RecipeDao.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/local/dao/RecipeDao.kt) - Recipe CRUD operations
-- [MealPlanDao.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/local/dao/MealPlanDao.kt) - Meal plan operations
-- [ShoppingDao.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/local/dao/ShoppingDao.kt) - Shopping list operations
+- [MealMateDatabase.kt#L18-L33](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/local/MealMateDatabase.kt#L18-L33) - Database definition
+- [RecipeDao.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/local/dao/RecipeDao.kt) - Recipe CRUD operations
+- [MealPlanDao.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/local/dao/MealPlanDao.kt) - Meal plan operations
+- [ShoppingDao.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/local/dao/ShoppingDao.kt) - Shopping list operations
 
 **Code Snippet**:
 ```kotlin
@@ -165,8 +165,8 @@ abstract class MealMateDatabase : RoomDatabase() {
 **Screen**: Settings Screen, Profile Screen
 
 **Code Reference**:
-- [PreferencesRepositoryImpl.kt#L14-L87](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/repository/PreferencesRepositoryImpl.kt#L14-L87) - DataStore implementation
-- [DataStoreModule.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/di/DataStoreModule.kt) - DataStore dependency injection
+- [PreferencesRepositoryImpl.kt#L14-L87](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/repository/PreferencesRepositoryImpl.kt#L14-L87) - DataStore implementation
+- [DataStoreModule.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/di/DataStoreModule.kt) - DataStore dependency injection
 
 **Code Snippet**:
 ```kotlin
@@ -213,9 +213,9 @@ class PreferencesRepositoryImpl @Inject constructor(
 **Screen**: Discover Screen, Recipe Detail Screen
 
 **Code Reference**:
-- [SpoonacularApi.kt#L9-L27](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/remote/api/SpoonacularApi.kt#L9-L27) - API interface
-- [NetworkModule.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/di/NetworkModule.kt) - Retrofit configuration
-- [RecipeRepositoryImpl.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/repository/RecipeRepositoryImpl.kt) - Repository implementation
+- [SpoonacularApi.kt#L9-L27](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/remote/api/SpoonacularApi.kt#L9-L27) - API interface
+- [NetworkModule.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/di/NetworkModule.kt) - Retrofit configuration
+- [RecipeRepositoryImpl.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/repository/RecipeRepositoryImpl.kt) - Repository implementation
 
 **Code Snippet**:
 ```kotlin
@@ -249,8 +249,8 @@ interface SpoonacularApi {
 **Screen**: Background tasks (triggered automatically)
 
 **Code Reference**:
-- [WeeklyReminderWorker.kt#L19-L73](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/worker/WeeklyReminderWorker.kt#L19-L73) - Weekly reminder worker
-- [SyncWorker.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/worker/SyncWorker.kt) - Background sync worker
+- [WeeklyReminderWorker.kt#L19-L73](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/worker/WeeklyReminderWorker.kt#L19-L73) - Weekly reminder worker
+- [SyncWorker.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/worker/SyncWorker.kt) - Background sync worker
 
 **Code Snippet**:
 ```kotlin
@@ -291,9 +291,9 @@ class WeeklyReminderWorker @AssistedInject constructor(
 **Screen**: All screens
 
 **Code Reference**:
-- [Domain Layer](https://github.com/[owner]/[repo]/tree/main/app/src/main/java/com/mercel/mealmate/domain) - Use cases and models
-- [Data Layer](https://github.com/[owner]/[repo]/tree/main/app/src/main/java/com/mercel/mealmate/data) - Repositories and data sources
-- [Presentation Layer](https://github.com/[owner]/[repo]/tree/main/app/src/main/java/com/mercel/mealmate/presentation) - ViewModels and UI
+- [Domain Layer](https://github.com/vubangsi/mealmate/tree/main/app/src/main/java/com/mercel/mealmate/domain) - Use cases and models
+- [Data Layer](https://github.com/vubangsi/mealmate/tree/main/app/src/main/java/com/mercel/mealmate/data) - Repositories and data sources
+- [Presentation Layer](https://github.com/vubangsi/mealmate/tree/main/app/src/main/java/com/mercel/mealmate/presentation) - ViewModels and UI
 
 **Package Structure**:
 ```
@@ -352,7 +352,7 @@ com.mercel.mealmate/
 **Screen**: Discover Screen (ViewModel testing)
 
 **Code Reference**:
-- [DiscoverViewModelTest.kt#L27-L199](https://github.com/[owner]/[repo]/blob/main/app/src/test/java/com/mercel/mealmate/presentation/discover/viewmodel/DiscoverViewModelTest.kt#L27-L199) - Complete ViewModel test suite
+- [DiscoverViewModelTest.kt#L27-L199](https://github.com/vubangsi/mealmate/blob/main/app/src/test/java/com/mercel/mealmate/presentation/discover/viewmodel/DiscoverViewModelTest.kt#L27-L199) - Complete ViewModel test suite
 
 **Code Snippet**:
 ```kotlin
@@ -419,8 +419,8 @@ class DiscoverViewModelTest {
 **Screen**: Weekly Meal Plan, Recipe Detail, Shopping List, Instant Meal Maker
 
 **Code Reference**:
-- [AiRepositoryImpl.kt#L12-L361](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/repository/AiRepositoryImpl.kt#L12-L361) - AI implementation
-- [OpenAiApi.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/remote/api/OpenAiApi.kt) - OpenAI API interface
+- [AiRepositoryImpl.kt#L12-L361](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/repository/AiRepositoryImpl.kt#L12-L361) - AI implementation
+- [OpenAiApi.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/remote/api/OpenAiApi.kt) - OpenAI API interface
 
 #### AI Feature 1: Weekly Meal Plan Generation
 
@@ -668,7 +668,7 @@ override suspend fun generateInstantMealPlan(availableIngredients: List<String>)
 **Screen**: All screens
 
 **Code Reference**:
-- [Theme.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/ui/theme/Theme.kt) - Material 3 theme
+- [Theme.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/ui/theme/Theme.kt) - Material 3 theme
 - All screen implementations use Compose with Material 3 components
 
 ---
@@ -856,7 +856,7 @@ enum class AppTheme { SYSTEM, LIGHT, DARK }
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/[owner]/[repo].git
+   git clone https://github.com/vubangsi/mealmate.git
    cd mealmate
    ```
 
@@ -926,7 +926,7 @@ The project includes comprehensive ViewModel unit tests covering:
 
 **Test Report Summary**:
 
-<img src="images/Test Report Summary.png" alt="Test Report Summary - Comprehensive test results" width="60%">
+<img src="images/Test Report Summary.png" alt="Test Report Summary - Comprehensive test results" width="70%">
 
 *Complete test report showing successful ViewModel testing with JUnit, MockK, and Turbine*
 
@@ -980,10 +980,10 @@ The project includes comprehensive ViewModel unit tests covering:
 ## 👨‍💻 Author / Contributors
 
 **Mercel Vubangsi**
-- **MIU ID**: [Your MIU ID]
 - **Course**: CS473 - Mobile Application Development
 - **Block**: October 2025
-- **Email**: [your.email@miu.edu]
+- **Email**: mvubbangsi@miu.edu
+- **GitHub**: [github.com/vubangsi](https://github.com/vubangsi)
 
 ---
 
@@ -1005,8 +1005,8 @@ This project is developed as part of the CS473 course at Maharishi International
 ## 📞 Support
 
 For questions or issues, please contact:
-- Email: [your.email@miu.edu]
-- GitHub Issues: [https://github.com/[owner]/[repo]/issues](https://github.com/[owner]/[repo]/issues)
+- Email: mvubbangsi@miu.edu
+- GitHub Issues: [https://github.com/vubangsi/mealmate/issues](https://github.com/vubangsi/mealmate/issues)
 
 ---
 
