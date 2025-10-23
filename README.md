@@ -1,476 +1,150 @@
-# MealMate - Smart Meal Planning Assistant
+# MealMate - Smart Meal Planning & Recipe Discovery App
 
-<img src="images/home%20screen.png" alt="MealMate Home Screen" width="60%">
+[![Android](https://img.shields.io/badge/Platform-Android-green.svg)](https://developer.android.com/)
+[![Kotlin](https://img.shields.io/badge/Language-Kotlin-blue.svg)](https://kotlinlang.org/)
+[![Jetpack Compose](https://img.shields.io/badge/UI-Jetpack%20Compose-brightgreen.svg)](https://developer.android.com/jetpack/compose)
 
 ## 📱 Introduction
 
-**MealMate** is an intelligent Android meal planning application that helps users discover recipes, plan weekly meals, generate shopping lists, and leverage AI to optimize their meal planning experience. Built with modern Android technologies including Kotlin, Jetpack Compose, and Material Design 3, MealMate provides a seamless, offline-first experience for health-conscious meal planning.
+**MealMate** is a comprehensive Android application designed to revolutionize meal planning and recipe discovery. Built with modern Android development practices, MealMate helps users discover recipes, plan weekly meals, generate shopping lists, and leverage AI-powered features for personalized meal recommendations.
 
-### Problem Statement
-Many people struggle with meal planning, recipe discovery, and grocery shopping organization. MealMate solves this by providing an integrated platform that combines recipe discovery, intelligent meal planning, AI-powered suggestions, and shopping list generation—all in one app.
+### Key Features
+- 🔍 **Recipe Discovery**: Search and filter recipes by cuisine, diet, and intolerances
+- 📅 **Weekly Meal Planning**: Organize meals for the entire week with drag-and-drop functionality
+- 🛒 **Smart Shopping Lists**: Auto-generate shopping lists from meal plans with AI optimization
+- 🤖 **AI-Powered Features**: Generate meal plans, recipe summaries, and ingredient substitutions using OpenAI
+- 📸 **Instant Meal Maker**: Scan your fridge/pantry to get instant meal suggestions
+- 💾 **Offline Support**: Full offline functionality with Room database caching
+- 🎨 **Modern UI**: Beautiful Material 3 design with dark theme support
 
-### Key Screenshots
+---
 
-#### Discover Screen - Browse & Search Recipes
-<img src="images/recipe%20search%20screen.png" alt="Recipe Search Screen" width="60%">
-*Browse recipes with advanced filtering by cuisine, diet, and intolerances*
+## 📸 App Screenshots
 
-#### Recipe Details - Comprehensive Recipe Information
-<img src="images/recipe%20detail.png" alt="Recipe Detail Screen" width="60%">
-*View full recipe details with AI-generated summaries and nutritional information*
+### Login & Authentication
+<img src="images/login screen.png" alt="Login Screen - User authentication with email and password" width="60%">
 
-#### Weekly Meal Plan - Organize Your Week
-<img src="images/weekly%20meal%20plan.png" alt="Weekly Meal Plan Screen" width="60%">
-*Plan meals for breakfast, lunch, and dinner across 7 days with AI-powered suggestions*
+*Login screen with secure authentication and modern Material 3 design*
 
-#### AI-Generated Shopping List
-<img src="images/AI%20generated%20shoping%20list.png" alt="AI Generated Shopping List" width="60%">
-*Automatically generated and optimized shopping lists from your meal plan*
+### Sign Up
+<img src="images/signup screen.png" alt="Sign Up Screen - New user registration" width="60%">
 
-#### Settings & Profile Management
-<img src="images/settings%20screen.png" alt="Settings Screen" width="60%">
-*Configure dietary preferences, calorie targets, and budget constraints*
+*User registration screen for creating new accounts*
 
-#### Authentication Screens
-<img src="images/login%20screen.png" alt="Login Screen" width="60%">
-*Secure user authentication with login and signup screens*
+### Home Screen
+<img src="images/home screen.png" alt="Home Screen - Main dashboard with featured recipes and quick actions" width="60%">
 
-<img src="images/signup%20screen.png" alt="Signup Screen" width="60%">
-*Create new account with email and password*
+*Main dashboard displaying featured recipes, quick access to discover recipes, and instant meal maker*
 
-#### User Profile
-<img src="images/profile%20screen.png" alt="Profile Screen" width="60%">
-*Manage user profile and personal preferences*
+### Recipe Search & Discovery
+<img src="images/recipe search screen.png" alt="Recipe Search Screen - Browse and filter recipes by various criteria" width="60%">
 
-#### AI Recipe Summary
-<img src="images/AI-generated%20recipe%20summary.png" alt="AI Recipe Summary" width="60%">
-*AI-powered recipe summaries highlighting key flavors and appeal*
+*Recipe discovery screen with search functionality, diet filters, and intolerance options*
 
-### Problem Statement
-Planning healthy, balanced meals for the week can be time-consuming and overwhelming. Many people struggle with:
-- Finding recipes that match their dietary preferences and restrictions
-- Creating a balanced weekly meal plan
-- Generating organized shopping lists from their meal plans
-- Tracking nutritional information
-- Managing favorite recipes
+### Recipe Details
+<img src="images/recipe detail.png" alt="Recipe Detail Screen - Comprehensive recipe information with ingredients and instructions" width="60%">
 
-**MealMate** solves these problems by providing an intelligent meal planning assistant that helps users discover recipes, plan their weekly meals, generate shopping lists, and leverage AI to optimize their meal planning experience.
+*Detailed recipe view showing ingredients, cooking instructions, nutritional information, and AI-generated summary*
 
-**Target Users:** Health-conscious individuals, busy professionals, families, and anyone looking to simplify meal planning and grocery shopping.
+### Weekly Meal Plan
+<img src="images/weekly meal plan.png" alt="Weekly Meal Plan - Organize meals for the entire week" width="60%">
 
-## App Screenshots
+*Weekly meal planner with organized breakfast, lunch, and dinner slots for each day*
 
-### Authentication & Profile
-<div style="display: flex; gap: 10px; flex-wrap: wrap;">
-  <img src="images/login screen.png" alt="Login Screen" width="240" style="max-width: 60%;">
-  <img src="images/signup screen.png" alt="Signup Screen" width="240" style="max-width: 60%;">
-  <img src="images/profile screen.png" alt="Profile Screen" width="240" style="max-width: 60%;">
-</div>
+### Shopping List
+<img src="images/AI generated shoping list.png" alt="Shopping List - AI-optimized shopping list with checkboxes" width="60%">
 
-### Recipe Discovery & Details
-<div style="display: flex; gap: 10px; flex-wrap: wrap;">
-  <img src="images/recipe search screen.png" alt="Recipe Search Screen" width="240" style="max-width: 60%;">
-  <img src="images/recipe detail.png" alt="Recipe Detail" width="240" style="max-width: 60%;">
-  <img src="images/AI-generated recipe summary.png" alt="AI Recipe Summary" width="240" style="max-width: 60%;">
-</div>
+*Smart shopping list with AI optimization, organized by store sections, and check-off functionality*
 
-### Meal Planning & Shopping
-<div style="display: flex; gap: 10px; flex-wrap: wrap;">
-  <img src="images/weekly meal plan.png" alt="Weekly Meal Plan" width="240" style="max-width: 60%;">
-  <img src="images/AI generated shoping list.png" alt="AI Shopping List" width="240" style="max-width: 60%;">
-  <img src="images/settings screen.png" alt="Settings Screen" width="240" style="max-width: 60%;">
-</div>
+### AI-Generated Recipe Summary
+<img src="images/AI-generated recipe summary.png" alt="AI Recipe Summary - OpenAI-powered recipe description" width="60%">
+
+*AI-generated recipe summary providing engaging descriptions and key highlights*
+
+### Profile Screen
+<img src="images/profile screen.png" alt="Profile Screen - User profile with dietary preferences" width="60%">
+
+*User profile displaying personal information and dietary preferences*
+
+### Settings
+<img src="images/settings screen.png" alt="Settings Screen - App configuration and preferences" width="60%">
+
+*Settings screen for managing dietary restrictions, calorie goals, theme preferences, and notifications*
+
+---
 
 ## 🎯 Feature Implementation Documentation
 
-### Grading Criteria Mapping
+This section maps each grading criterion to its specific implementation in the codebase.
 
-| Criterion | Points | Implementation | Code Reference |
-|-----------|--------|-----------------|-----------------|
-| **Navigation & Single Activity** | 10 | Single MainActivity with Navigation 3 graph managing 5 screens | [NavGraph.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/presentation/navigation/NavGraph.kt) |
-| **Room Database** | 10 | Entities, DAOs, CRUD operations for recipes, meals, shopping items | [MealMateDatabase.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/local/MealMateDatabase.kt) |
-| **DataStore** | 5 | User preferences persistence (diet, intolerances, calories, budget, theme) | [DataStoreModule.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/di/DataStoreModule.kt) |
-| **Retrofit** | 10 | Spoonacular API integration for recipe search and details | [SpoonacularApi.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/remote/api/SpoonacularApi.kt) |
-| **WorkManager** | 5 | Weekly reminders and cache sync tasks | [WeeklyReminderWorker.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/worker/WeeklyReminderWorker.kt) |
-| **Clean Architecture** | 10 | Layered structure (data, domain, presentation) with repositories and use cases | [Architecture Overview](https://github.com/vubangsi/mealmate/tree/main/app/src/main/java/com/mercel/mealmate) |
-| **Package Hierarchy** | 5 | Organized folder structure reflecting Clean Architecture | [Package Structure](https://github.com/vubangsi/mealmate/tree/main/app/src/main/java/com/mercel/mealmate) |
-| **Testing** | 10 | ViewModel unit tests with JUnit, MockK, and Turbine | [DiscoverViewModelTest.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/test/java/com/mercel/mealmate/presentation/discover/viewmodel/DiscoverViewModelTest.kt) |
-| **GenAI Integration** | 10 | OpenAI API for meal plan generation, recipe summaries, shopping list optimization | [AiRepositoryImpl.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/repository/AiRepositoryImpl.kt) |
-| **Documentation** | 10 | Comprehensive README with all required sections | This file |
-| **UI/UX Design** | 5 | Jetpack Compose + Material 3 with responsive layouts | [Presentation Layer](https://github.com/vubangsi/mealmate/tree/main/app/src/main/java/com/mercel/mealmate/presentation) |
-| **Functionality & Stability** | 5 | No crashes, all features working, proper error handling | [Error Handling](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/core/util/UiState.kt) |
-| **Wholeness / SCI** | 5 | SCI principle reflection on systematic thinking | See Wholeness / SCI Connection section |
+### 1. Navigation & Single Activity Architecture (10 points)
 
-### Advanced Features
-- **AI Recipe Summaries**: Generate engaging recipe descriptions using OpenAI API
-- **AI Shopping List Optimization**: Organize shopping items by store section using AI
-- **AI Ingredient Substitutions**: Get dietary-friendly ingredient alternatives
-- **Material 3 Design**: Modern, accessible UI with dynamic theming (UI/UX - 5 pts)
-- **Smooth Animations**: Enhanced UX with transition animations (Bonus +2 pts)
-- **Single Activity Architecture**: Navigation 3 with single MainActivity (Navigation - 10 pts)
+**Implementation**: All screens are managed under a single `MainActivity` using Navigation Component 3 with a navigation graph and proper back stack management.
 
-## System Architecture (10 pts - Clean Architecture)
+**Screen**: All screens
 
-MealMate follows **Clean Architecture** principles with clear separation of concerns:
+**Code Reference**: 
+- [MainActivity.kt#L27-L37](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/MainActivity.kt#L27-L37) - Single Activity setup with Navigation
+- [NavGraph.kt#L34-L122](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/presentation/navigation/NavGraph.kt#L34-L122) - Navigation graph definition
 
-### Architecture Layers
-
-```
-┌─────────────────────────────────────────┐
-│         Presentation Layer              │
-│  (UI, ViewModels, UI States, Screens)  │
-│  - Jetpack Compose UI                   │
-│  - Material 3 Components                │
-│  - StateFlow for state management       │
-└──────────────┬──────────────────────────┘
-               │ (depends on)
-┌──────────────▼──────────────────────────┐
-│          Domain Layer                   │
-│  (Use Cases, Models, Repository         │
-│   Interfaces)                           │
-│  - Business logic                       │
-│  - Repository contracts                 │
-│  - Domain models                        │
-└──────────────┬──────────────────────────┘
-               │ (depends on)
-┌──────────────▼──────────────────────────┐
-│           Data Layer                    │
-│  (Repository Implementations, Room,     │
-│   Retrofit, DataStore)                  │
-│  - Local persistence (Room)             │
-│  - Remote API (Retrofit)                │
-│  - Preferences (DataStore)              │
-└─────────────────────────────────────────┘
-```
-
-### Key Architectural Patterns
-- **MVVM (Model-View-ViewModel)**: Separates UI logic from business logic
-- **Repository Pattern**: Abstracts data sources (local and remote)
-- **Dependency Injection**: Hilt for managing dependencies
-- **Single Activity Architecture**: Navigation Component with single MainActivity
-- **Offline-First**: Room database as source of truth with API fallback
-- **Result Type**: Proper error handling with Result<T> wrapper
-
-### Clean Architecture Implementation Details
-
-**Presentation Layer** (`presentation/`):
-- Each feature has: `screen/`, `uistate/`, `viewmodel/` structure
-- ViewModels manage UI state with StateFlow
-- Screens are pure Compose functions
-- UI states are immutable data classes
-
-**Domain Layer** (`domain/`):
-- Repository interfaces define contracts
-- Use cases encapsulate business logic
-- Domain models are independent of frameworks
-
-**Data Layer** (`data/`):
-- Repository implementations handle data orchestration
-- Local data source: Room DAOs
-- Remote data source: Retrofit APIs
-- Mappers convert between DTOs and domain models
-
-**Dependency Injection** (`di/`):
-- Hilt modules provide dependencies
-- Singleton scope for repositories and APIs
-- Constructor injection in ViewModels
-
-## Use Case Diagram
-
-```
-                    ┌─────────────┐
-                    │    User     │
-                    └──────┬──────┘
-                           │
-        ┌──────────────────┼──────────────────┐
-        │                  │                  │
-        ▼                  ▼                  ▼
-┌──────────────┐   ┌──────────────┐   ┌──────────────┐
-│Search Recipes│   │  Plan Meals  │   │Manage Shopping│
-└──────┬───────┘   └──────┬───────┘   └──────┬───────┘
-       │                  │                  │
-       ▼                  ▼                  ▼
-┌──────────────┐   ┌──────────────┐   ┌──────────────┐
-│View Details  │   │Generate Plan │   │Generate List │
-└──────┬───────┘   │  (AI)        │   │  (AI)        │
-       │           └──────────────┘   └──────────────┘
-       ▼
-┌──────────────┐
-│Add to Fav/Plan│
-└──────────────┘
-```
-
-## Technology Stack
-
-| Category | Technology | Purpose |
-|----------|-----------|---------|
-| **Language** | Kotlin | Primary development language |
-| **UI Framework** | Jetpack Compose | Modern declarative UI |
-| **Design System** | Material 3 | UI components and theming |
-| **Architecture** | Clean Architecture | Layered separation of concerns |
-| **DI** | Hilt | Dependency injection |
-| **Local Database** | Room | Offline data persistence |
-| **Remote API** | Retrofit + Moshi | Network requests and JSON parsing |
-| **Preferences** | DataStore | Key-value storage |
-| **Background Tasks** | WorkManager | Scheduled tasks and sync |
-| **Navigation** | Navigation Compose | Screen navigation |
-| **Image Loading** | Coil | Async image loading |
-| **Concurrency** | Coroutines + Flow | Async operations |
-| **Generative AI** | Gemini AI | AI-powered features |
-| **Testing** | JUnit, MockK, Turbine | Unit testing |
-
-## Grading Criteria Compliance (100 Points)
-
-| Category | Points | Implementation | Evidence |
-|----------|--------|-----------------|----------|
-| **Navigation & Single Activity** | 10 | Single MainActivity with Navigation 3 graph | `presentation/navigation/NavGraph.kt` - 5 screens (Discover, Plan, Shopping, Settings, Profile) |
-| **Room Database** | 10 | Entities, DAOs, CRUD operations | `data/local/entity/` - RecipeEntity, MealEntryEntity, ShoppingItemEntity; `data/local/dao/` - RecipeDao, MealPlanDao, ShoppingDao |
-| **DataStore** | 5 | User preferences persistence | `di/DataStoreModule.kt` - Stores diet, intolerances, calories, budget, theme |
-| **Retrofit** | 10 | API integration with Spoonacular | `data/remote/api/SpoonacularApi.kt` - Search and detail endpoints; `data/repository/RecipeRepositoryImpl.kt` |
-| **WorkManager** | 5 | Background tasks & sync | `worker/WeeklyReminderWorker.kt` - Weekly notifications; `worker/SyncWorker.kt` - Cache refresh |
-| **Clean Architecture** | 10 | Layered structure (data, domain, presentation) | `data/`, `domain/`, `presentation/` layers with repositories, use cases, ViewModels |
-| **Package Hierarchy** | 5 | Organized folder structure | See Package Hierarchy section below |
-| **Testing** | 10 | ViewModel unit tests | `app/src/test/java/com/mercel/mealmate/presentation/discover/viewmodel/DiscoverViewModelTest.kt` |
-| **GenAI Integration** | 10 | OpenAI API with prompts & code | `data/repository/AiRepositoryImpl.kt` - 4 AI features with error handling & timeouts |
-| **Documentation** | 10 | Comprehensive README | This file with all required sections |
-| **UI/UX Design** | 5 | Jetpack Compose + Material 3 | Material 3 components, dynamic theming, responsive layouts |
-| **Functionality & Stability** | 5 | No crashes, all features working | Proper error handling, offline support, graceful degradation |
-| **Wholeness / SCI** | 5 | SCI principle reflection | See Wholeness / SCI Connection section |
-| **BONUS: Animations** | +2 | Transition animations | Compose animations on screen transitions |
-| **BONUS: Offline Sync** | +3 | Offline-first with auto-sync | Room as source of truth, API fallback, WorkManager sync |
-
-## Package Hierarchy
-
-```
-com.mercel.mealmate/
-├── core/
-│   └── util/
-│       ├── Constants.kt
-│       ├── NetworkMonitor.kt
-│       └── UiState.kt
-├── data/
-│   ├── local/
-│   │   ├── converter/
-│   │   │   └── Converters.kt
-│   │   ├── dao/
-│   │   │   ├── MealPlanDao.kt
-│   │   │   ├── RecipeDao.kt
-│   │   │   └── ShoppingDao.kt
-│   │   ├── entity/
-│   │   │   ├── MealEntryEntity.kt
-│   │   │   ├── RecipeEntity.kt
-│   │   │   └── ShoppingItemEntity.kt
-│   │   └── MealMateDatabase.kt
-│   ├── mapper/
-│   │   ├── MealEntryMapper.kt
-│   │   ├── RecipeMapper.kt
-│   │   └── ShoppingItemMapper.kt
-│   ├── remote/
-│   │   ├── api/
-│   │   │   └── SpoonacularApi.kt
-│   │   └── dto/
-│   │       └── RecipeDto.kt
-│   └── repository/
-│       ├── AiRepositoryImpl.kt
-│       ├── MealPlanRepositoryImpl.kt
-│       ├── PreferencesRepositoryImpl.kt
-│       ├── RecipeRepositoryImpl.kt
-│       └── ShoppingRepositoryImpl.kt
-├── di/
-│   ├── AiModule.kt
-│   ├── AppModule.kt
-│   ├── DatabaseModule.kt
-│   ├── DataStoreModule.kt
-│   ├── NetworkModule.kt
-│   └── RepositoryModule.kt
-├── domain/
-│   ├── model/
-│   │   ├── MealEntry.kt
-│   │   ├── Recipe.kt
-│   │   ├── ShoppingItem.kt
-│   │   └── UserPrefs.kt
-│   ├── repository/
-│   │   ├── AiRepository.kt
-│   │   ├── MealPlanRepository.kt
-│   │   ├── PreferencesRepository.kt
-│   │   ├── RecipeRepository.kt
-│   │   └── ShoppingRepository.kt
-│   └── usecase/
-│       ├── GenerateWeeklyPlanUseCase.kt
-│       ├── GetRecipeUseCase.kt
-│       ├── SearchRecipesUseCase.kt
-│       ├── ToggleFavoriteUseCase.kt
-│       └── ToggleShoppingItemUseCase.kt
-├── presentation/
-│   ├── detail/
-│   │   ├── screen/
-│   │   │   └── DetailScreen.kt
-│   │   ├── uistate/
-│   │   │   └── DetailUiState.kt
-│   │   └── viewmodel/
-│   │       └── DetailViewModel.kt
-│   ├── discover/
-│   │   ├── screen/
-│   │   │   └── DiscoverScreen.kt
-│   │   ├── uistate/
-│   │   │   └── DiscoverUiState.kt
-│   │   └── viewmodel/
-│   │       └── DiscoverViewModel.kt
-│   ├── navigation/
-│   │   └── NavGraph.kt
-│   ├── plan/
-│   │   ├── screen/
-│   │   │   └── PlanScreen.kt
-│   │   ├── uistate/
-│   │   │   └── PlanUiState.kt
-│   │   └── viewmodel/
-│   │       └── PlanViewModel.kt
-│   ├── settings/
-│   │   ├── screen/
-│   │   │   └── SettingsScreen.kt
-│   │   ├── uistate/
-│   │   │   └── SettingsUiState.kt
-│   │   └── viewmodel/
-│   │       └── SettingsViewModel.kt
-│   └── shopping/
-│       ├── screen/
-│       │   └── ShoppingScreen.kt
-│       ├── uistate/
-│       │   └── ShoppingUiState.kt
-│       └── viewmodel/
-│           └── ShoppingViewModel.kt
-├── worker/
-│   ├── SyncWorker.kt
-│   └── WeeklyReminderWorker.kt
-├── MainActivity.kt
-└── MealMateApplication.kt
-```
-
-## Screenshots / Screen Flow
-
-### Main Screens
-1. **Discover Screen**: Browse and search recipes with filters
-2. **Recipe Detail Screen**: View full recipe with AI-generated summary
-3. **Weekly Plan Screen**: Organize meals across 7 days
-4. **Shopping List Screen**: Check off items as you shop
-5. **Settings Screen**: Configure preferences and dietary restrictions
-
-### Navigation Flow
-```
-Discover → Detail → Add to Plan → Plan Screen → Generate Shopping List → Shopping Screen
-   ↓                                    ↓
-Settings                          AI Generate Plan
-```
-
-## Setup Instructions
-
-### Prerequisites
-- Android Studio Hedgehog (2023.1.1) or later
-- JDK 21
-- Android SDK API 26+
-- Spoonacular API Key (get from https://spoonacular.com/food-api)
-- OpenAI API Key (get from https://platform.openai.com/api-keys)
-
-### Installation Steps
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/vubangsi/mealmate.git
-   cd mealmate
-   ```
-
-2. **Configure API Keys**
-
-   Create or edit `local.properties` in the project root:
-   ```properties
-   SPOONACULAR_API_KEY=your_spoonacular_api_key_here
-   OPENAI_API_KEY=your_openai_api_key_here
-   ```
-
-3. **Open in Android Studio**
-   - Open Android Studio
-   - Select "Open an Existing Project"
-   - Navigate to the mealmate directory
-   - Wait for Gradle sync to complete
-
-4. **Build and Run**
-   - Connect an Android device or start an emulator (API 26+)
-   - Click "Run" or press Shift+F10
-   - Select your device and click OK
-
-### Troubleshooting
-- If Gradle sync fails, try "File → Invalidate Caches / Restart"
-- Ensure you have the latest Android SDK tools installed
-- Check that API keys are properly set in `local.properties`
-
-## 🔌 API Reference
-
-### Spoonacular API (Retrofit Integration)
-- **Base URL**: `https://api.spoonacular.com/`
-- **Endpoints Used**:
-  - `GET /recipes/complexSearch` - Search recipes with filters
-  - `GET /recipes/{id}/information` - Get detailed recipe information
-- **Implementation**: [SpoonacularApi.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/remote/api/SpoonacularApi.kt)
-
-### OpenAI API (GenAI Integration)
-- **Base URL**: `https://api.openai.com/`
-- **Model**: `gpt-3.5-turbo`
-- **Endpoints Used**:
-  - `POST /v1/chat/completions` - Generate AI responses
-- **Implementation**: [OpenAiApi.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/remote/api/OpenAiApi.kt)
-
-## 💾 Data Models & Room Database
-
-### Domain Models
-
-#### Recipe
+**Code Snippet**:
 ```kotlin
-data class Recipe(
-    val id: String,
-    val title: String,
-    val imageUrl: String?,
-    val servings: Int,
-    val readyInMinutes: Int,
-    val cuisines: List<String>,
-    val diets: List<String>,
-    val ingredients: List<Ingredient>,
-    val steps: List<String>,
-    val nutrients: Nutrients,
-    val isFavorite: Boolean = false
-)
+@AndroidEntryPoint
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            MealMateTheme {
+                MealMateApp()
+            }
+        }
+    }
+}
+
+@Composable
+fun NavGraph(
+    navController: NavHostController,
+    startDestination: String = Screen.Home.route,
+    modifier: Modifier = Modifier
+) {
+    NavHost(
+        navController = navController,
+        startDestination = startDestination,
+        modifier = modifier
+    ) {
+        composable(Screen.Auth.route) { AuthScreen(...) }
+        composable(Screen.Home.route) { HomeScreen(...) }
+        composable(Screen.Discover.route) { DiscoverScreen(...) }
+        // ... other screens with proper back stack management
+    }
+}
 ```
 
-#### MealEntry
-```kotlin
-data class MealEntry(
-    val id: String,
-    val recipeId: String,
-    val dayOfWeek: Int,
-    val slot: MealSlot,
-    val recipeName: String,
-    val recipeImageUrl: String?
-)
-```
+---
 
-#### ShoppingItem
-```kotlin
-data class ShoppingItem(
-    val id: String,
-    val ingredientName: String,
-    val quantity: String,
-    val section: String?,
-    val checked: Boolean = false
-)
-```
+### 2. Room Database (Local Persistence) (10 points)
 
-### Room Database Implementation
+**Implementation**: Complete Room database implementation with entities, DAOs, and CRUD operations for recipes, meal plans, shopping items, and users.
 
-**Location**: [MealMateDatabase.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/local/MealMateDatabase.kt)
+**Screen**: All screens (data persistence layer)
 
+**Code Reference**:
+- [MealMateDatabase.kt#L18-L33](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/local/MealMateDatabase.kt#L18-L33) - Database definition
+- [RecipeDao.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/local/dao/RecipeDao.kt) - Recipe CRUD operations
+- [MealPlanDao.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/local/dao/MealPlanDao.kt) - Meal plan operations
+- [ShoppingDao.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/local/dao/ShoppingDao.kt) - Shopping list operations
+
+**Code Snippet**:
 ```kotlin
 @Database(
-    entities = [RecipeEntity::class, MealEntryEntity::class, ShoppingItemEntity::class, UserEntity::class],
-    version = 1,
+    entities = [
+        RecipeEntity::class,
+        MealEntryEntity::class,
+        ShoppingItemEntity::class,
+        UserEntity::class
+    ],
+    version = 4,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
@@ -482,51 +156,205 @@ abstract class MealMateDatabase : RoomDatabase() {
 }
 ```
 
-**DAOs with CRUD Operations**:
+---
 
-1. **RecipeDao** (`data/local/dao/RecipeDao.kt`):
-   - `insertRecipes()` - Create
-   - `getRecipeById()` - Read
-   - `getAllRecipes()` - Read all
-   - `updateRecipe()` - Update
-   - `deleteRecipe()` - Delete
-   - `toggleFavorite()` - Update favorite status
+### 3. DataStore (User Preferences) (5 points)
 
-2. **MealPlanDao** (`data/local/dao/MealPlanDao.kt`):
-   - `insertMealEntry()` - Create
-   - `getAllMealEntries()` - Read all
-   - `deleteMealEntry()` - Delete
-   - `deleteAll()` - Clear plan
+**Implementation**: DataStore Preferences implementation for saving and retrieving user preferences including diet, intolerances, calorie goals, budget, and theme.
 
-3. **ShoppingDao** (`data/local/dao/ShoppingDao.kt`):
-   - `insertItem()` - Create
-   - `getAllItems()` - Read all
-   - `updateCheckedStatus()` - Update
-   - `deleteItem()` - Delete
-   - `deleteCheckedItems()` - Clear checked items
+**Screen**: Settings Screen, Profile Screen
 
-**Offline-First Strategy**:
-- Room database as source of truth
-- API data cached in Room
-- Graceful fallback when offline
-- Automatic sync via WorkManager
+**Code Reference**:
+- [PreferencesRepositoryImpl.kt#L14-L87](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/repository/PreferencesRepositoryImpl.kt#L14-L87) - DataStore implementation
+- [DataStoreModule.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/di/DataStoreModule.kt) - DataStore dependency injection
 
-## 🧪 Testing (Mandatory – ViewModel Only)
+**Code Snippet**:
+```kotlin
+class PreferencesRepositoryImpl @Inject constructor(
+    private val dataStore: DataStore<Preferences>
+) : PreferencesRepository {
 
-### Unit Tests
-The project includes comprehensive ViewModel unit tests using JUnit, MockK, and Turbine.
+    private object PreferencesKeys {
+        val DIET = stringPreferencesKey("diet")
+        val INTOLERANCES = stringSetPreferencesKey("intolerances")
+        val CALORIES_PER_DAY = intPreferencesKey("calories_per_day")
+        val BUDGET_PER_WEEK = intPreferencesKey("budget_per_week")
+        val THEME = stringPreferencesKey("theme")
+    }
 
-**Test File**: [DiscoverViewModelTest.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/test/java/com/mercel/mealmate/presentation/discover/viewmodel/DiscoverViewModelTest.kt)
+    override val userPrefs: Flow<UserPrefs> = dataStore.data
+        .catch { exception ->
+            if (exception is IOException) {
+                emit(emptyPreferences())
+            } else {
+                throw exception
+            }
+        }
+        .map { preferences ->
+            UserPrefs(
+                diet = preferences[PreferencesKeys.DIET],
+                intolerances = preferences[PreferencesKeys.INTOLERANCES] ?: emptySet(),
+                caloriesPerDay = preferences[PreferencesKeys.CALORIES_PER_DAY],
+                budgetPerWeek = preferences[PreferencesKeys.BUDGET_PER_WEEK],
+                theme = AppTheme.valueOf(
+                    preferences[PreferencesKeys.THEME] ?: AppTheme.SYSTEM.name
+                )
+            )
+        }
+}
+```
 
-**Test Coverage**:
-- ✅ Initial state verification
-- ✅ Successful recipe search
-- ✅ Error handling
-- ✅ Search query updates
-- ✅ Diet filter changes
-- ✅ Favorite toggling
+---
 
-**Example Test Code**:
+### 4. Retrofit (Remote Data Source) (10 points)
+
+**Implementation**: Retrofit integration with Spoonacular API for recipe search and details, including coroutine support and proper error handling.
+
+**Screen**: Discover Screen, Recipe Detail Screen
+
+**Code Reference**:
+- [SpoonacularApi.kt#L9-L27](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/remote/api/SpoonacularApi.kt#L9-L27) - API interface
+- [NetworkModule.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/di/NetworkModule.kt) - Retrofit configuration
+- [RecipeRepositoryImpl.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/repository/RecipeRepositoryImpl.kt) - Repository implementation
+
+**Code Snippet**:
+```kotlin
+interface SpoonacularApi {
+    @GET("recipes/complexSearch")
+    suspend fun searchRecipes(
+        @Query("query") query: String,
+        @Query("diet") diet: String? = null,
+        @Query("intolerances") intolerances: String? = null,
+        @Query("addRecipeInformation") addRecipeInformation: Boolean = true,
+        @Query("addRecipeNutrition") addRecipeNutrition: Boolean = true,
+        @Query("number") number: Int = 20,
+        @Query("apiKey") apiKey: String
+    ): RecipeSearchResponse
+
+    @GET("recipes/{id}/information")
+    suspend fun getRecipeById(
+        @Path("id") id: Int,
+        @Query("includeNutrition") includeNutrition: Boolean = true,
+        @Query("apiKey") apiKey: String
+    ): RecipeDto
+}
+```
+
+---
+
+### 5. WorkManager (Background Task Scheduling) (5 points)
+
+**Implementation**: WorkManager implementation for weekly meal plan reminders and background data synchronization.
+
+**Screen**: Background tasks (triggered automatically)
+
+**Code Reference**:
+- [WeeklyReminderWorker.kt#L19-L73](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/worker/WeeklyReminderWorker.kt#L19-L73) - Weekly reminder worker
+- [SyncWorker.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/worker/SyncWorker.kt) - Background sync worker
+
+**Code Snippet**:
+```kotlin
+@HiltWorker
+class WeeklyReminderWorker @AssistedInject constructor(
+    @Assisted context: Context,
+    @Assisted workerParams: WorkerParameters
+) : CoroutineWorker(context, workerParams) {
+
+    override suspend fun doWork(): Result {
+        return try {
+            createNotificationChannel()
+            sendNotification()
+            Result.success()
+        } catch (e: Exception) {
+            Result.failure()
+        }
+    }
+
+    private fun sendNotification() {
+        val builder = NotificationCompat.Builder(applicationContext, CHANNEL_ID)
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .setContentTitle("Plan Your Week")
+            .setContentText("Don't forget to plan your meals for the upcoming week!")
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setAutoCancel(true)
+        // ... notification logic
+    }
+}
+```
+
+---
+
+### 6. Clean Architecture Implementation (10 points)
+
+**Implementation**: Complete Clean Architecture with data, domain, and presentation layers. Each feature is sub-packaged into screen, uistate, and viewmodel.
+
+**Screen**: All screens
+
+**Code Reference**:
+- [Domain Layer](https://github.com/[owner]/[repo]/tree/main/app/src/main/java/com/mercel/mealmate/domain) - Use cases and models
+- [Data Layer](https://github.com/[owner]/[repo]/tree/main/app/src/main/java/com/mercel/mealmate/data) - Repositories and data sources
+- [Presentation Layer](https://github.com/[owner]/[repo]/tree/main/app/src/main/java/com/mercel/mealmate/presentation) - ViewModels and UI
+
+**Package Structure**:
+```
+com.mercel.mealmate/
+├── core/                          # Core utilities
+│   └── util/
+├── data/                          # Data layer
+│   ├── local/                     # Room database
+│   │   ├── dao/
+│   │   ├── entity/
+│   │   └── converter/
+│   ├── remote/                    # API services
+│   │   ├── api/
+│   │   └── dto/
+│   ├── mapper/                    # Data mappers
+│   └── repository/                # Repository implementations
+├── domain/                        # Domain layer
+│   ├── model/                     # Domain models
+│   ├── repository/                # Repository interfaces
+│   └── usecase/                   # Use cases
+├── presentation/                  # Presentation layer
+│   ├── auth/
+│   │   ├── screen/
+│   │   ├── uistate/
+│   │   └── viewmodel/
+│   ├── discover/
+│   │   ├── screen/
+│   │   ├── uistate/
+│   │   └── viewmodel/
+│   ├── detail/
+│   ├── home/
+│   ├── plan/
+│   ├── shopping/
+│   ├── profile/
+│   ├── settings/
+│   ├── instantmeal/
+│   └── navigation/
+├── di/                            # Dependency injection
+└── worker/                        # Background workers
+```
+
+---
+
+### 7. Package Hierarchy (Mandatory) (5 points)
+
+**Implementation**: Clearly structured folders reflecting Clean Architecture layers as shown above in section 6.
+
+**Code Reference**: See package structure in section 6 above.
+
+---
+
+### 8. Testing (Mandatory - ViewModel Only) (10 points)
+
+**Implementation**: Comprehensive ViewModel unit tests using JUnit, MockK, and Turbine for testing state flows.
+
+**Screen**: Discover Screen (ViewModel testing)
+
+**Code Reference**:
+- [DiscoverViewModelTest.kt#L27-L199](https://github.com/[owner]/[repo]/blob/main/app/src/test/java/com/mercel/mealmate/presentation/discover/viewmodel/DiscoverViewModelTest.kt#L27-L199) - Complete ViewModel test suite
+
+**Code Snippet**:
 ```kotlin
 @OptIn(ExperimentalCoroutinesApi::class)
 class DiscoverViewModelTest {
@@ -534,33 +362,7 @@ class DiscoverViewModelTest {
     private lateinit var searchRecipesUseCase: SearchRecipesUseCase
     private lateinit var toggleFavoriteUseCase: ToggleFavoriteUseCase
     private lateinit var viewModel: DiscoverViewModel
-
-    @Before
-    fun setup() {
-        Dispatchers.setMain(StandardTestDispatcher())
-        searchRecipesUseCase = mockk()
-        toggleFavoriteUseCase = mockk(relaxed = true)
-    }
-
-    @Test
-    fun `initial state is loading`() = runTest {
-        // Given
-        val mockRecipes = listOf(createMockRecipe("1", "Test Recipe"))
-        coEvery {
-            searchRecipesUseCase(any(), any(), any())
-        } returns flowOf(Result.success(mockRecipes))
-
-        // When
-        viewModel = DiscoverViewModel(searchRecipesUseCase, toggleFavoriteUseCase)
-
-        // Then
-        viewModel.uiState.test {
-            val initialState = awaitItem()
-            assertTrue(initialState.isLoading)
-            assertEquals("", initialState.searchQuery)
-            assertEquals(emptyList<Recipe>(), initialState.recipes)
-        }
-    }
+    private val testDispatcher = StandardTestDispatcher()
 
     @Test
     fun `searchRecipes updates state with success`() = runTest {
@@ -569,8 +371,8 @@ class DiscoverViewModelTest {
             createMockRecipe("1", "Pasta"),
             createMockRecipe("2", "Pizza")
         )
-        coEvery {
-            searchRecipesUseCase(any(), any(), any())
+        coEvery { 
+            searchRecipesUseCase(any(), any(), any()) 
         } returns flowOf(Result.success(mockRecipes))
 
         // When
@@ -583,49 +385,57 @@ class DiscoverViewModelTest {
             assertFalse(state.isLoading)
             assertEquals(2, state.recipes.size)
             assertEquals("Pasta", state.recipes[0].title)
+            assertEquals("Pizza", state.recipes[1].title)
+            assertEquals(null, state.error)
         }
+    }
+
+    @Test
+    fun `toggleFavorite calls use case`() = runTest {
+        // Given
+        val mockRecipes = listOf(createMockRecipe("1", "Test"))
+        coEvery { 
+            searchRecipesUseCase(any(), any(), any()) 
+        } returns flowOf(Result.success(mockRecipes))
+        viewModel = DiscoverViewModel(searchRecipesUseCase, toggleFavoriteUseCase)
+        testDispatcher.scheduler.advanceUntilIdle()
+
+        // When
+        viewModel.toggleFavorite("1")
+        testDispatcher.scheduler.advanceUntilIdle()
+
+        // Then
+        coVerify { toggleFavoriteUseCase("1") }
     }
 }
 ```
 
-### Running Tests
-```bash
-# Run all unit tests
-./gradlew test
+---
 
-# Run specific test class
-./gradlew test --tests DiscoverViewModelTest
+### 9. Generative AI Integration (Mandatory) (10 points)
 
-# Generate test coverage report
-./gradlew testDebugUnitTestCoverage
-```
+**Implementation**: OpenAI GPT-3.5-turbo integration for multiple AI features including meal plan generation, recipe summaries, shopping list optimization, and instant meal suggestions.
 
-### Test Architecture
-- **Framework**: JUnit 4 with Kotlin Coroutines Test
-- **Mocking**: MockK for dependency mocking
-- **Flow Testing**: Turbine for StateFlow assertions
-- **Dispatcher**: StandardTestDispatcher for deterministic testing
-- **Coverage**: ViewModel logic, state management, use case invocations
+**Screen**: Weekly Meal Plan, Recipe Detail, Shopping List, Instant Meal Maker
 
-## Generative AI Integration (10 pts - Mandatory)
+**Code Reference**:
+- [AiRepositoryImpl.kt#L12-L361](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/repository/AiRepositoryImpl.kt#L12-L361) - AI implementation
+- [OpenAiApi.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/data/remote/api/OpenAiApi.kt) - OpenAI API interface
 
-### AI Features Implemented
+#### AI Feature 1: Weekly Meal Plan Generation
 
-#### 1. Weekly Meal Plan Generation
-**Location**: `presentation/plan/viewmodel/PlanViewModel.kt` | `data/repository/AiRepositoryImpl.kt`
-
-**Prompt Example**:
+**Prompt**:
 ```
 Generate a weekly meal plan with the following preferences:
 - diet: vegetarian
-- caloriesPerDay: 2000
-- budgetPerWeek: 150
+- calories: 2000
+- intolerances: dairy
 
 Provide a balanced meal plan for breakfast, lunch, and dinner for 7 days.
 Format the response as a clear weekly schedule.
 ```
 
-**Code Snippet** (`data/repository/AiRepositoryImpl.kt`):
+**Code Snippet**:
 ```kotlin
 override suspend fun generateWeeklyPlan(preferences: Map<String, Any>): Result<String> {
     return try {
@@ -634,54 +444,48 @@ override suspend fun generateWeeklyPlan(preferences: Map<String, Any>): Result<S
             preferences.forEach { (key, value) ->
                 append("- $key: $value\n")
             }
-            append("\nProvide a balanced meal plan for breakfast, lunch, and dinner for 7 days.")
+            append("\nProvide a balanced meal plan for breakfast, lunch, and dinner for 7 days. ")
+            append("Format the response as a clear weekly schedule.")
         }
 
-        Log.d(TAG, "Generating weekly plan with OpenAI (timeout ${TIMEOUT_MS}ms)...")
         val response = withTimeoutOrNull(TIMEOUT_MS) {
             openAiApi.generateCompletion(
                 authHeader = "Bearer $apiKey",
                 request = OpenAiRequest(
-                    model = MODEL,
+                    model = "gpt-3.5-turbo",
                     messages = listOf(
                         ChatMessage(role = "system", content = "You are a helpful meal planning assistant."),
                         ChatMessage(role = "user", content = prompt)
                     ),
                     temperature = 0.7,
-                    maxOutputTokens = 2048
+                    maxTokens = 2048
                 )
             )
         }
-
-        if (response == null) {
-            Result.failure(Exception("AI generation timed out..."))
-        } else {
-            val result = response.choices.firstOrNull()?.message?.content ?: "No plan generated"
-            Result.success(result)
-        }
+        
+        Result.success(response?.choices?.firstOrNull()?.message?.content ?: "No plan generated")
     } catch (e: Exception) {
         Result.failure(Exception("Failed to generate meal plan: ${e.message}"))
     }
 }
 ```
 
-**Screenshot**: See "weekly meal plan.png" above
+**Screenshot**: See "Weekly Meal Plan" screenshot above
 
 ---
 
-#### 2. Recipe Summary Generation
-**Location**: `presentation/detail/viewmodel/DetailViewModel.kt` | `data/repository/AiRepositoryImpl.kt`
+#### AI Feature 2: Recipe Summary Generation
 
-**Prompt Example**:
+**Prompt**:
 ```
 Create a brief, engaging summary for this recipe:
-Title: Spaghetti Carbonara
-Ingredients: pasta, eggs, bacon, parmesan, black pepper
+Title: Chicken Parmesan
+Ingredients: chicken breast, marinara sauce, mozzarella cheese, parmesan cheese, breadcrumbs
 
 Provide a 2-3 sentence description highlighting key flavors and appeal.
 ```
 
-**Code Snippet** (`data/repository/AiRepositoryImpl.kt`):
+**Code Snippet**:
 ```kotlin
 override suspend fun generateRecipeSummary(
     recipeTitle: String,
@@ -700,7 +504,7 @@ override suspend fun generateRecipeSummary(
             openAiApi.generateCompletion(
                 authHeader = "Bearer $apiKey",
                 request = OpenAiRequest(
-                    model = MODEL,
+                    model = "gpt-3.5-turbo",
                     messages = listOf(
                         ChatMessage(role = "system", content = "You are a helpful culinary assistant."),
                         ChatMessage(role = "user", content = prompt)
@@ -710,243 +514,501 @@ override suspend fun generateRecipeSummary(
                 )
             )
         }
-
-        if (response == null) {
-            Result.failure(Exception("AI generation timed out..."))
-        } else {
-            val result = response.choices.firstOrNull()?.message?.content ?: "No summary generated"
-            Result.success(result)
-        }
+        
+        Result.success(response?.choices?.firstOrNull()?.message?.content ?: "No summary generated")
     } catch (e: Exception) {
         Result.failure(Exception("Failed to generate summary: ${e.message}"))
     }
 }
 ```
 
-**Screenshot**: See "AI-generated recipe summary.png" above
+**Screenshot**: See "AI-Generated Recipe Summary" screenshot above
 
 ---
 
-#### 3. Shopping List Optimization
-**Location**: `presentation/shopping/viewmodel/ShoppingViewModel.kt` | `data/repository/AiRepositoryImpl.kt`
+#### AI Feature 3: Shopping List Optimization
 
-**Prompt Example**:
+**Prompt**:
 ```
 Optimize this shopping list by grouping items by store section:
-tomatoes
-milk
-chicken breast
-bread
-cheese
+- Tomatoes
+- Chicken breast
+- Milk
+- Bread
+- Apples
 
 Group items into: Produce, Dairy, Meat, Pantry, Frozen, Bakery, Other
 ```
 
-**Code Snippet** (`data/repository/ShoppingRepositoryImpl.kt`):
-```kotlin
-override suspend fun generateShoppingListFromPlan() {
-    val mealEntries = mealPlanDao.getAllMealEntries().first()
-    val ingredientsMap = mutableMapOf<String, MutableList<String>>()
-
-    // Collect all ingredients from meal plan
-    mealEntries.forEach { entry ->
-        val recipe = recipeDao.getRecipeById(entry.recipeId).first()
-        recipe?.ingredients?.forEach { ingredient ->
-            val key = ingredient.name.lowercase()
-            if (ingredientsMap.containsKey(key)) {
-                ingredientsMap[key]?.add(ingredient.quantity)
-            } else {
-                ingredientsMap[key] = mutableListOf(ingredient.quantity)
-            }
-        }
-    }
-
-    // Get AI optimization for store sections
-    val optimizationResult = aiRepository.optimizeShoppingList(ingredientsList)
-
-    val sectionMap = optimizationResult.fold(
-        onSuccess = { response -> parseAiOptimization(response) },
-        onFailure = { exception -> throw Exception("Failed to optimize: ${exception.message}") }
-    )
-
-    // Save optimized items to database
-    shoppingDao.insertItems(items)
-}
-```
-
-**Screenshot**: See "AI generated shoping list.png" above
-
----
-
-#### 4. Ingredient Substitution
-**Location**: `data/repository/AiRepositoryImpl.kt`
-
-**Prompt Example**:
-```
-Suggest a vegan-friendly substitution for: butter
-```
-
 **Code Snippet**:
 ```kotlin
-override suspend fun suggestSubstitution(ingredient: String, dietary: String?): Result<String> {
+override suspend fun optimizeShoppingList(items: List<String>): Result<String> {
     return try {
-        val prompt = if (dietary != null) {
-            "Suggest a $dietary-friendly substitution for: $ingredient"
-        } else {
-            "Suggest a healthy substitution for: $ingredient"
-        }
+        val prompt = """
+            Optimize this shopping list by grouping items by store section:
+            ${items.joinToString("\n")}
+
+            Group items into: Produce, Dairy, Meat, Pantry, Frozen, Bakery, Other
+        """.trimIndent()
 
         val response = withTimeoutOrNull(TIMEOUT_MS) {
             openAiApi.generateCompletion(
                 authHeader = "Bearer $apiKey",
                 request = OpenAiRequest(
-                    model = MODEL,
+                    model = "gpt-3.5-turbo",
                     messages = listOf(
-                        ChatMessage(role = "system", content = "You are a helpful nutrition assistant."),
+                        ChatMessage(role = "system", content = "You are a helpful shopping assistant."),
                         ChatMessage(role = "user", content = prompt)
                     ),
                     temperature = 0.7,
-                    maxTokens = 500
+                    maxTokens = 1000
                 )
             )
         }
-
-        if (response == null) {
-            Result.failure(Exception("AI generation timed out..."))
-        } else {
-            val result = response.choices.firstOrNull()?.message?.content ?: "No substitution found"
-            Result.success(result)
-        }
+        
+        Result.success(response?.choices?.firstOrNull()?.message?.content ?: "No optimization generated")
     } catch (e: Exception) {
-        Result.failure(Exception("Failed to suggest substitution: ${e.message}"))
+        Result.failure(Exception("Failed to optimize shopping list: ${e.message}"))
     }
 }
 ```
 
-### AI Integration Architecture
-- **API Layer**: `data/remote/api/OpenAiApi.kt` - Retrofit interface for OpenAI API
-- **DTO Layer**: `data/remote/dto/OpenAiDto.kt` - Request/Response data classes
-- **Repository**: `data/repository/AiRepositoryImpl.kt` - AI operations with error handling and timeouts
-- **DI Module**: `di/AiModule.kt` - Dependency injection for AI repository
-- **Network Module**: `di/NetworkModule.kt` - Retrofit client configuration for OpenAI
-- **Error Handling**: 30-second timeout, specific error messages, proper exception propagation
-
-## WorkManager Integration (5 pts)
-
-### Background Tasks Implementation
-
-**Location**: `worker/` directory
-
-#### 1. Weekly Reminder Worker
-**File**: `worker/WeeklyReminderWorker.kt`
-
-```kotlin
-class WeeklyReminderWorker(
-    context: Context,
-    params: WorkerParameters
-) : CoroutineWorker(context, params) {
-
-    override suspend fun doWork(): Result {
-        return try {
-            // Send weekly meal plan reminder notification
-            sendNotification("Weekly Meal Plan", "Time to plan your meals for the week!")
-            Result.success()
-        } catch (e: Exception) {
-            Log.e(TAG, "Error sending reminder", e)
-            Result.retry()
-        }
-    }
-}
-```
-
-**Schedule**: Every Sunday at 9:00 AM
-
-#### 2. Sync Worker
-**File**: `worker/SyncWorker.kt`
-
-```kotlin
-class SyncWorker(
-    context: Context,
-    params: WorkerParameters
-) : CoroutineWorker(context, params) {
-
-    override suspend fun doWork(): Result {
-        return try {
-            // Refresh recipe cache
-            // Clear stale data
-            // Sync user preferences
-            Result.success()
-        } catch (e: Exception) {
-            Log.e(TAG, "Error syncing data", e)
-            Result.retry()
-        }
-    }
-}
-```
-
-**Schedule**: Periodic sync every 24 hours
-
-### Features
-- ✅ Periodic task scheduling
-- ✅ Retry on failure
-- ✅ Coroutine-based async work
-- ✅ Graceful error handling
-- ✅ Offline-aware execution
-
-## Future Enhancements
-
-### Planned Features
-- **Recipe Rating & Reviews**: Allow users to rate and review recipes
-- **Social Sharing**: Share meal plans and recipes with friends
-- **Barcode Scanner**: Scan products to add to shopping list
-- **Meal Prep Mode**: Batch cooking suggestions and prep instructions
-- **Nutritional Tracking**: Daily calorie and macro tracking
-- **Recipe Import**: Import recipes from URLs
-- **Voice Commands**: Voice-activated recipe search and navigation
-- **Grocery Delivery Integration**: Connect with delivery services
-- **Multi-language Support**: Expand beyond English and Spanish
-- **Wear OS Companion**: Shopping list on smartwatch
-
-### Known Limitations
-- Requires internet for initial recipe search
-- API rate limits on free tier
-- Limited recipe database (Spoonacular free tier)
-- AI responses may vary in quality
-
-## Wholeness / SCI Connection (MIU Context)
-
-### Science of Creative Intelligence Principle: **Natural Law**
-
-MealMate embodies the principle of Natural Law by creating a system that works in harmony with the natural rhythms of life. Just as nature operates through cycles and patterns, MealMate helps users establish healthy eating patterns through:
-
-1. **Weekly Cycles**: The app organizes meals in weekly cycles, mirroring the natural rhythm of the week
-2. **Balance**: AI-generated meal plans ensure nutritional balance, reflecting nature's principle of equilibrium
-3. **Efficiency**: Automated shopping lists eliminate waste, aligning with nature's efficiency
-4. **Adaptation**: The app adapts to individual preferences, like nature adapts to different environments
-
-By following these natural principles, MealMate helps users develop sustainable, healthy eating habits that support their overall wellbeing and contribute to a more organized, stress-free lifestyle.
-
-### Reflection
-Creating MealMate has been an exercise in applying systematic thinking to solve real-world problems. The Clean Architecture approach mirrors the orderly structure found in nature, where each layer has a specific purpose and interacts harmoniously with others. The integration of AI represents the creative intelligence aspect, where technology enhances human capability in making better decisions about nutrition and health.
-
-## Author / Contributors
-
-**Mercel Vubangsi**  
-MIU ID: [Your MIU ID]  
-Course: CS473 - Mobile Application Development  
-Block: October 2025  
-Maharishi International University
+**Screenshot**: See "AI Generated Shopping List" screenshot above
 
 ---
 
-## License
+#### AI Feature 4: Instant Meal Plan from Available Ingredients
 
-This project is created for educational purposes as part of the CS473 course at Maharishi International University.
+**Prompt**:
+```
+Create an instant meal plan for today (breakfast, lunch, dinner) using ONLY these available ingredients:
 
-## Acknowledgments
+AVAILABLE INGREDIENTS:
+- Eggs
+- Bread
+- Tomatoes
+- Chicken breast
+- Rice
 
-- Spoonacular API for recipe data
-- Google Gemini AI for generative AI capabilities
-- Android Jetpack libraries
-- Material Design 3 guidelines
-- MIU CS473 course instructors and peers
+REQUIREMENTS:
+- Use only ingredients from the list above
+- Create balanced, nutritious meals
+- Provide quick, simple recipes (15-30 minutes max)
+- Include cooking instructions and estimated prep/cook times
+```
+
+**Code Snippet**:
+```kotlin
+override suspend fun generateInstantMealPlan(availableIngredients: List<String>): Result<String> {
+    return try {
+        val prompt = """
+        Create an instant meal plan for today (breakfast, lunch, dinner) using ONLY these available ingredients:
+        
+        AVAILABLE INGREDIENTS:
+        ${availableIngredients.joinToString("\n")}
+        
+        REQUIREMENTS:
+        - Use only ingredients from the list above
+        - Create balanced, nutritious meals
+        - Provide quick, simple recipes (15-30 minutes max)
+        - Suggest substitutions if certain ingredients are missing
+        - Include cooking instructions and estimated prep/cook times
+        
+        FORMAT:
+        BREAKFAST:
+        - Recipe Name
+        - Ingredients used: [list]
+        - Instructions: [brief steps]
+        - Prep time: X minutes
+        
+        LUNCH:
+        [same format]
+        
+        DINNER:
+        [same format]
+        
+        SHOPPING NOTES:
+        [Any critical missing ingredients needed for better meals]
+        """
+
+        val response = withTimeoutOrNull(TIMEOUT_MS) {
+            openAiApi.generateCompletion(
+                authHeader = "Bearer $apiKey",
+                request = OpenAiRequest(
+                    model = "gpt-3.5-turbo",
+                    messages = listOf(
+                        ChatMessage(role = "system", content = "You are an expert chef and meal planning assistant."),
+                        ChatMessage(role = "user", content = prompt)
+                    ),
+                    temperature = 0.7,
+                    maxTokens = 2048
+                )
+            )
+        }
+        
+        Result.success(response?.choices?.firstOrNull()?.message?.content ?: "Unable to generate meal plan")
+    } catch (e: Exception) {
+        Result.failure(e)
+    }
+}
+```
+
+---
+
+### 10. Project Documentation (README) (10 points)
+
+**Implementation**: This comprehensive README file with all required sections.
+
+---
+
+### 11. User Interface & UX Design (5 points)
+
+**Implementation**: Modern UI built with Jetpack Compose and Material 3, featuring dynamic color theming, dark mode support, and responsive layouts.
+
+**Screen**: All screens
+
+**Code Reference**:
+- [Theme.kt](https://github.com/[owner]/[repo]/blob/main/app/src/main/java/com/mercel/mealmate/ui/theme/Theme.kt) - Material 3 theme
+- All screen implementations use Compose with Material 3 components
+
+---
+
+### 12. Functionality & Stability (5 points)
+
+**Implementation**: App runs without crashes, handles configuration changes, and provides proper error handling throughout.
+
+**Features**:
+- Proper error states with retry actions
+- Loading states for async operations
+- Configuration change handling via ViewModels
+- Offline support with Room caching
+
+---
+
+### 13. Wholeness / SCI Connection (5 points)
+
+**Reflection**: 
+
+MealMate embodies the Science of Creative Intelligence principle of **"Harmony exists in the diversity of Natural Law"**. Just as nature maintains perfect balance through diverse ecosystems, MealMate harmonizes various aspects of healthy living:
+
+- **Nutritional Balance**: The app helps users maintain dietary harmony by considering multiple factors - calories, nutrients, dietary restrictions, and personal preferences.
+- **Time Management**: By planning meals in advance, users create harmony between their busy schedules and healthy eating habits.
+- **Resource Optimization**: The AI-powered shopping list optimization reflects nature's efficiency, minimizing waste and maximizing utility.
+- **Wholeness in Technology**: The integration of multiple technologies (AI, local storage, cloud APIs) works in harmony to create a seamless user experience.
+
+This principle reminds us that true wellness comes from balancing all aspects of life - nutrition, planning, and mindful consumption - just as MealMate integrates diverse features into a unified, harmonious whole.
+
+---
+
+## 🏗️ Technical Details
+
+### System Architecture
+
+MealMate follows **Clean Architecture** principles with clear separation of concerns across three main layers:
+
+#### Architecture Diagram
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     Presentation Layer                       │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
+│  │   Screens    │  │   ViewModels │  │   UI States  │      │
+│  │  (Compose)   │◄─┤   (Logic)    │◄─┤   (State)    │      │
+│  └──────────────┘  └──────────────┘  └──────────────┘      │
+└─────────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────┐
+│                      Domain Layer                            │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
+│  │  Use Cases   │  │  Repositories│  │    Models    │      │
+│  │  (Business)  │─►│  (Interfaces)│  │   (Entities) │      │
+│  └──────────────┘  └──────────────┘  └──────────────┘      │
+└─────────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────┐
+│                       Data Layer                             │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
+│  │ Repositories │  │  Local (Room)│  │ Remote (API) │      │
+│  │     Impl     │─►│   Database   │  │   Retrofit   │      │
+│  └──────────────┘  └──────────────┘  └──────────────┘      │
+└─────────────────────────────────────────────────────────────┘
+```
+
+#### Data Flow
+
+1. **User Interaction** → Screen (Compose UI)
+2. **Screen** → ViewModel (Event)
+3. **ViewModel** → Use Case (Business Logic)
+4. **Use Case** → Repository (Data Request)
+5. **Repository** → Local DB / Remote API
+6. **Data** → Repository → Use Case → ViewModel
+7. **ViewModel** → UI State → Screen (Update UI)
+
+---
+
+### Technology Stack
+
+| Category | Technology | Purpose |
+|----------|-----------|---------|
+| **Language** | Kotlin | Primary programming language |
+| **UI Framework** | Jetpack Compose | Modern declarative UI |
+| **Design System** | Material 3 | UI components and theming |
+| **Architecture** | Clean Architecture | Separation of concerns |
+| **Dependency Injection** | Hilt | Dependency management |
+| **Local Database** | Room | Offline data persistence |
+| **Preferences** | DataStore | User preferences storage |
+| **Networking** | Retrofit + Moshi | API communication |
+| **Image Loading** | Coil | Async image loading |
+| **Background Tasks** | WorkManager | Scheduled tasks |
+| **Navigation** | Navigation Compose | Screen navigation |
+| **Concurrency** | Coroutines + Flow | Async operations |
+| **AI Integration** | OpenAI API | Generative AI features |
+| **Recipe API** | Spoonacular API | Recipe data source |
+| **Testing** | JUnit + MockK + Turbine | Unit testing |
+
+---
+
+### API Integration
+
+#### Spoonacular API
+- **Base URL**: `https://api.spoonacular.com/`
+- **Endpoints**:
+  - `GET /recipes/complexSearch` - Search recipes with filters
+  - `GET /recipes/{id}/information` - Get recipe details
+
+#### OpenAI API
+- **Base URL**: `https://api.openai.com/v1/`
+- **Endpoints**:
+  - `POST /chat/completions` - Generate AI responses
+- **Model**: GPT-3.5-turbo
+
+---
+
+### Domain Models
+
+#### Recipe
+```kotlin
+data class Recipe(
+    val id: String,
+    val title: String,
+    val imageUrl: String?,
+    val servings: Int,
+    val readyInMinutes: Int,
+    val cuisines: List<String>,
+    val diets: List<String>,
+    val ingredients: List<Ingredient>,
+    val steps: List<String>,
+    val nutrients: Nutrients,
+    val isFavorite: Boolean
+)
+```
+
+#### MealEntry
+```kotlin
+data class MealEntry(
+    val id: String,
+    val recipeId: String,
+    val dayOfWeek: Int,
+    val slot: MealSlot
+)
+
+enum class MealSlot { BREAKFAST, LUNCH, DINNER }
+```
+
+#### ShoppingItem
+```kotlin
+data class ShoppingItem(
+    val id: String,
+    val ingredientName: String,
+    val quantity: String,
+    val section: String?,
+    val checked: Boolean
+)
+```
+
+#### UserPrefs
+```kotlin
+data class UserPrefs(
+    val diet: String?,
+    val intolerances: Set<String>,
+    val caloriesPerDay: Int?,
+    val budgetPerWeek: Int?,
+    val theme: AppTheme
+)
+
+enum class AppTheme { SYSTEM, LIGHT, DARK }
+```
+
+---
+
+## 🚀 Setup Instructions
+
+### Prerequisites
+- **Android Studio**: Hedgehog (2023.1.1) or later
+- **JDK**: 21
+- **Android SDK**: API level 26+ (Android 8.0+)
+- **Spoonacular API Key**: [Get one here](https://spoonacular.com/food-api)
+- **OpenAI API Key**: [Get one here](https://platform.openai.com/api-keys)
+
+### Installation Steps
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/[owner]/[repo].git
+   cd mealmate
+   ```
+
+2. **Configure API Keys**
+   
+   Create a `local.properties` file in the root directory (use `local.properties.template` as reference):
+   ```properties
+   sdk.dir=/path/to/Android/sdk
+   SPOONACULAR_API_KEY=your_spoonacular_api_key_here
+   OPENAI_API_KEY=your_openai_api_key_here
+   GEMINI_API_KEY=your_gemini_api_key_here  # Optional
+   ```
+
+3. **Open in Android Studio**
+   - Launch Android Studio
+   - Select "Open an Existing Project"
+   - Navigate to the cloned `mealmate` directory
+   - Wait for Gradle sync to complete
+
+4. **Build the project**
+   ```bash
+   ./gradlew build
+   ```
+
+5. **Run the app**
+   - Connect an Android device or start an emulator (API 26+)
+   - Click the "Run" button in Android Studio or use:
+   ```bash
+   ./gradlew installDebug
+   ```
+
+### Configuration
+
+#### Build Variants
+- **Debug**: Development build with logging enabled
+- **Release**: Production build with ProGuard optimization
+
+#### Minimum Requirements
+- **Min SDK**: 26 (Android 8.0)
+- **Target SDK**: 36 (Android 14)
+- **Compile SDK**: 35
+
+---
+
+## 🧪 Testing
+
+### Running Tests
+
+#### Unit Tests
+```bash
+./gradlew test
+```
+
+#### Instrumented Tests
+```bash
+./gradlew connectedAndroidTest
+```
+
+### Test Coverage
+
+The project includes comprehensive ViewModel unit tests covering:
+- State management and updates
+- Use case interactions
+- Error handling
+- User input validation
+- Asynchronous operations
+
+**Test Report Summary**:
+
+<img src="images/Test Report Summary.png" alt="Test Report Summary - Comprehensive test results" width="60%">
+
+*Complete test report showing successful ViewModel testing with JUnit, MockK, and Turbine*
+
+---
+
+## 🔐 Security
+
+- **API Keys**: Stored securely in `local.properties` (not committed to version control)
+- **BuildConfig**: API keys injected at build time
+- **Network Security**: HTTPS-only connections
+- **Data Privacy**: User data stored locally with Room encryption support
+
+---
+
+## 📱 Features Overview
+
+### Core Features
+- ✅ **User Authentication**: Secure login and registration
+- ✅ **Recipe Discovery**: Search with filters (diet, intolerances, cuisine)
+- ✅ **Recipe Details**: Comprehensive information with AI summaries
+- ✅ **Favorites**: Save and manage favorite recipes
+- ✅ **Weekly Meal Planning**: Organize meals by day and meal type
+- ✅ **Shopping Lists**: Auto-generate from meal plans
+- ✅ **AI Optimization**: Smart shopping list organization
+- ✅ **Instant Meal Maker**: Generate meals from available ingredients
+- ✅ **Offline Mode**: Full functionality without internet
+- ✅ **Dark Theme**: System-aware theme switching
+- ✅ **Notifications**: Weekly meal planning reminders
+
+### Bonus Features
+- ✅ **UI Animations**: Smooth transitions and motion
+- ✅ **Offline Sync**: Automatic data synchronization
+- ✅ **Camera Integration**: Scan fridge/pantry for ingredients
+
+---
+
+## 🔮 Future Enhancements
+
+- [ ] **Social Features**: Share recipes and meal plans with friends
+- [ ] **Nutrition Tracking**: Detailed calorie and macro tracking
+- [ ] **Grocery Store Integration**: Direct ordering from shopping lists
+- [ ] **Voice Commands**: Hands-free cooking instructions
+- [ ] **Recipe Import**: Import recipes from websites
+- [ ] **Meal Prep Mode**: Batch cooking suggestions
+- [ ] **Multi-language Support**: Localization for more languages
+- [ ] **Wear OS Support**: Smartwatch companion app
+- [ ] **Widget Support**: Home screen widgets for quick access
+
+---
+
+## 👨‍💻 Author / Contributors
+
+**Mercel Vubangsi**
+- **MIU ID**: [Your MIU ID]
+- **Course**: CS473 - Mobile Application Development
+- **Block**: October 2025
+- **Email**: [your.email@miu.edu]
+
+---
+
+## 📄 License
+
+This project is developed as part of the CS473 course at Maharishi International University.
+
+---
+
+## 🙏 Acknowledgments
+
+- **Spoonacular API** for providing comprehensive recipe data
+- **OpenAI** for GPT-3.5-turbo AI capabilities
+- **Android Jetpack** team for modern development tools
+- **MIU Faculty** for guidance and support
+
+---
+
+## 📞 Support
+
+For questions or issues, please contact:
+- Email: [your.email@miu.edu]
+- GitHub Issues: [https://github.com/[owner]/[repo]/issues](https://github.com/[owner]/[repo]/issues)
+
+---
+
+**Built with ❤️ using Kotlin and Jetpack Compose**
+
