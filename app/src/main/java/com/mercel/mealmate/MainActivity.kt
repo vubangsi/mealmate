@@ -46,7 +46,7 @@ fun MealMateApp(
     val authState by authViewModel.uiState.collectAsStateWithLifecycle()
     
     // Determine start destination based on auth state
-    val startDestination = if (authState.isLoggedIn) Screen.Discover.route else Screen.Auth.route
+    val startDestination = if (authState.isLoggedIn) Screen.Home.route else Screen.Auth.route
     
     // Hide bottom bar on auth screen
     val showBottomBar = currentDestination?.route != Screen.Auth.route
@@ -69,12 +69,14 @@ fun MealMateApp(
                             label = { Text(item.label) },
                             selected = currentDestination?.hierarchy?.any { it.route == item.route } == true,
                             onClick = {
-                                navController.navigate(item.route) {
-                                    popUpTo(navController.graph.findStartDestination().id) {
-                                        saveState = true
+                                if (currentDestination?.route != item.route) {
+                                    navController.navigate(item.route) {
+                                        popUpTo(Screen.Home.route) {
+                                            inclusive = false
+                                        }
+                                        launchSingleTop = true
+                                        restoreState = true
                                     }
-                                    launchSingleTop = true
-                                    restoreState = true
                                 }
                             }
                         )
@@ -85,7 +87,8 @@ fun MealMateApp(
     ) { innerPadding ->
         NavGraph(
             navController = navController,
-            startDestination = startDestination
+            startDestination = startDestination,
+            modifier = Modifier.padding(innerPadding)
         )
     }
 }
@@ -97,7 +100,7 @@ data class BottomNavItem(
 )
 
 val bottomNavItems = listOf(
-    BottomNavItem(Screen.Discover.route, Icons.Default.Search, "Discover"),
+    BottomNavItem(Screen.Home.route, Icons.Default.Home, "Home"),
     BottomNavItem(Screen.Plan.route, Icons.Default.CalendarMonth, "Plan"),
     BottomNavItem(Screen.Shopping.route, Icons.Default.ShoppingCart, "Shopping"),
     BottomNavItem(Screen.Profile.route, Icons.Default.Person, "Profile"),

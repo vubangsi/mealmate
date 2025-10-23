@@ -22,7 +22,7 @@ import com.mercel.mealmate.data.local.entity.UserEntity
         ShoppingItemEntity::class,
         UserEntity::class
     ],
-    version = 2,
+    version = 4,
     exportSchema = false
 )
 @TypeConverters(Converters::class)

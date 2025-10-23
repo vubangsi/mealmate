@@ -23,27 +23,40 @@ class InstantMealViewModel @Inject constructor(
     val uiState: StateFlow<InstantMealUiState> = _uiState.asStateFlow()
 
     fun scanFridge() {
+        // Legacy method for backward compatibility
+        scanFridgeWithImage(null)
+    }
+    
+    fun scanFridgeWithImage(imageBase64: String?) {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, error = null) }
             
-            // Simulate fridge scanning - in real app this would use camera
-            val fridgePrompt = """
-            Analyze the uploaded fridge image and identify all visible food ingredients and items.
-            
-            Focus on identifying:
-            - Fresh produce (vegetables, fruits)
-            - Dairy products (milk, cheese, yogurt, eggs)
-            - Leftovers and cooked items
-            - Beverages and condiments
-            - Any packaged foods with visible labels
-            
-            For each item, estimate:
-            - Quantity available
-            - Freshness/expiration status
-            - Suitability for immediate cooking
-            
-            Return a simple list of available ingredients suitable for meal planning.
-            """
+            val fridgePrompt = if (imageBase64 != null) {
+                """
+                Analyze this fridge image and identify all visible food ingredients and items.
+                
+                Focus on identifying:
+                - Fresh produce (vegetables, fruits)
+                - Dairy products (milk, cheese, yogurt, eggs)
+                - Leftovers and cooked items
+                - Beverages and condiments
+                - Any packaged foods with visible labels
+                
+                For each item, estimate:
+                - Quantity available
+                - Freshness/expiration status
+                - Suitability for immediate cooking
+                
+                Return a simple numbered list of available ingredients suitable for meal planning.
+                
+                Image data: data:image/jpeg;base64,$imageBase64
+                """
+            } else {
+                """
+                Since no image was provided, simulate scanning a typical fridge and provide a sample list of common fridge ingredients.
+                Return a numbered list of realistic fridge ingredients that might be found in a typical household.
+                """
+            }
             
             try {
                 val result = aiRepository.analyzeAvailableIngredients(fridgePrompt)
@@ -79,28 +92,42 @@ class InstantMealViewModel @Inject constructor(
     }
 
     fun scanPantry() {
+        // Legacy method for backward compatibility
+        scanPantryWithImage(null)
+    }
+    
+    fun scanPantryWithImage(imageBase64: String?) {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, error = null) }
             
-            val pantryPrompt = """
-            Analyze the uploaded pantry/shelf image and identify all visible food ingredients and items.
-            
-            Focus on identifying:
-            - Canned goods and preserves
-            - Dry goods (rice, pasta, flour, cereals)
-            - Spices and seasonings
-            - Oils and vinegars
-            - Baking ingredients
-            - Snacks and packaged foods
-            
-            For each item, note:
-            - Product name and brand if visible
-            - Package size or quantity
-            - Expiration dates if visible
-            - Storage condition
-            
-            Return a comprehensive list of pantry ingredients available for cooking.
-            """
+            val pantryPrompt = if (imageBase64 != null) {
+                """
+                Analyze this pantry/shelf image and identify all visible food ingredients and items.
+                
+                Focus on identifying:
+                - Canned goods and preserves
+                - Dry goods (rice, pasta, flour, cereals)
+                - Spices and seasonings
+                - Oils and vinegars
+                - Baking ingredients
+                - Snacks and packaged foods
+                
+                For each item, note:
+                - Product name and brand if visible
+                - Package size or quantity
+                - Expiration dates if visible
+                - Storage condition
+                
+                Return a numbered list of pantry ingredients available for cooking.
+                
+                Image data: data:image/jpeg;base64,$imageBase64
+                """
+            } else {
+                """
+                Since no image was provided, simulate scanning a typical pantry and provide a sample list of common pantry ingredients.
+                Return a numbered list of realistic pantry ingredients that might be found in a typical household.
+                """
+            }
             
             try {
                 val result = aiRepository.analyzeAvailableIngredients(pantryPrompt)

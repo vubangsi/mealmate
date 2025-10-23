@@ -9,9 +9,12 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.mercel.mealmate.core.util.CameraUtils
+import com.mercel.mealmate.core.util.rememberCameraLauncher
 import com.mercel.mealmate.presentation.instantmeal.viewmodel.InstantMealViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -21,6 +24,35 @@ fun InstantMealScreen(
     viewModel: InstantMealViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
+    val context = LocalContext.current
+    
+    val (fridgeCameraLauncher, takeFridgePhoto) = rememberCameraLauncher(
+        onImageCaptured = { uri ->
+            val bitmap = CameraUtils.uriToBitmap(context, uri)
+            bitmap?.let {
+                val base64 = CameraUtils.bitmapToBase64(it)
+                viewModel.scanFridgeWithImage(base64)
+            }
+        },
+        onPermissionDenied = {
+            // Fallback to scanning without image
+            viewModel.scanFridge()
+        }
+    )
+    
+    val (pantryCameraLauncher, takePantryPhoto) = rememberCameraLauncher(
+        onImageCaptured = { uri ->
+            val bitmap = CameraUtils.uriToBitmap(context, uri)
+            bitmap?.let {
+                val base64 = CameraUtils.bitmapToBase64(it)
+                viewModel.scanPantryWithImage(base64)
+            }
+        },
+        onPermissionDenied = {
+            // Fallback to scanning without image
+            viewModel.scanPantry()
+        }
+    )
 
     Scaffold(
         topBar = {
@@ -81,7 +113,7 @@ fun InstantMealScreen(
                 horizontalArrangement = Arrangement.spacedBy(12.dp)
             ) {
                 Button(
-                    onClick = { viewModel.scanFridge() },
+                    onClick = { takeFridgePhoto() },
                     modifier = Modifier.weight(1f),
                     enabled = !uiState.isLoading
                 ) {
@@ -91,7 +123,7 @@ fun InstantMealScreen(
                 }
                 
                 OutlinedButton(
-                    onClick = { viewModel.scanPantry() },
+                    onClick = { takePantryPhoto() },
                     modifier = Modifier.weight(1f),
                     enabled = !uiState.isLoading
                 ) {

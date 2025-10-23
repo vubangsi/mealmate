@@ -80,24 +80,132 @@ fun HomeScreen(
                 }
             }
 
-            // Grid Tiles
+            // Messages and Loading States
+            uiState.message?.let { message ->
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 16.dp),
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.primaryContainer
+                    )
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(
+                            Icons.Default.CheckCircle,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Text(
+                            text = message,
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onPrimaryContainer
+                        )
+                        Spacer(modifier = Modifier.weight(1f))
+                        IconButton(onClick = { viewModel.clearMessage() }) {
+                            Icon(Icons.Default.Close, contentDescription = "Close")
+                        }
+                    }
+                }
+            }
+
+            uiState.error?.let { error ->
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 16.dp),
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.errorContainer
+                    )
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(
+                            Icons.Default.Error,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.error
+                        )
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Text(
+                            text = error,
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onErrorContainer
+                        )
+                        Spacer(modifier = Modifier.weight(1f))
+                        IconButton(onClick = { viewModel.clearMessage() }) {
+                            Icon(Icons.Default.Close, contentDescription = "Close")
+                        }
+                    }
+                }
+            }
+
+            if (uiState.isLoading) {
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 16.dp)
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        CircularProgressIndicator(modifier = Modifier.size(24.dp))
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Text(
+                            text = "Processing your request...",
+                            style = MaterialTheme.typography.bodyMedium
+                        )
+                    }
+                }
+            }
+
+            // Grid Tiles - Only functional ones
+            val homeTiles = listOf(
+                HomeTileData(
+                    id = "discover",
+                    title = "Discover",
+                    subtitle = "Find new recipes",
+                    icon = Icons.Default.Search,
+                    backgroundColor = MaterialTheme.colorScheme.primaryContainer,
+                    iconColor = MaterialTheme.colorScheme.primary,
+                    textColor = MaterialTheme.colorScheme.onPrimaryContainer
+                ),
+                HomeTileData(
+                    id = "instant_meal",
+                    title = "Instant Meal",
+                    subtitle = "From your fridge",
+                    icon = Icons.Default.CameraAlt,
+                    backgroundColor = MaterialTheme.colorScheme.secondaryContainer,
+                    iconColor = MaterialTheme.colorScheme.secondary,
+                    textColor = MaterialTheme.colorScheme.onSecondaryContainer
+                )
+            )
+            
             LazyVerticalGrid(
                 columns = GridCells.Fixed(2),
                 horizontalArrangement = Arrangement.spacedBy(16.dp),
                 verticalArrangement = Arrangement.spacedBy(16.dp),
                 modifier = Modifier.fillMaxSize()
             ) {
-                items(getHomeTiles()) { tile ->
+                items(homeTiles) { tile ->
                     HomeTile(
                         tile = tile,
                         onClick = {
                             when (tile.id) {
                                 "discover" -> onNavigateToDiscover()
                                 "instant_meal" -> onNavigateToInstantMealMaker()
-                                "scan_fridge" -> viewModel.scanFridge()
-                                "ai_suggestions" -> viewModel.getAiSuggestions()
-                                "meal_prep" -> viewModel.startMealPrep()
-                                "nutrition" -> viewModel.viewNutrition()
                             }
                         }
                     )
@@ -190,62 +298,3 @@ data class HomeTileData(
     val textColor: androidx.compose.ui.graphics.Color
 )
 
-@Composable
-fun getHomeTiles(): List<HomeTileData> {
-    return listOf(
-        HomeTileData(
-            id = "discover",
-            title = "Discover",
-            subtitle = "Find new recipes",
-            icon = Icons.Default.Search,
-            backgroundColor = MaterialTheme.colorScheme.primaryContainer,
-            iconColor = MaterialTheme.colorScheme.primary,
-            textColor = MaterialTheme.colorScheme.onPrimaryContainer
-        ),
-        HomeTileData(
-            id = "instant_meal",
-            title = "Instant Meal",
-            subtitle = "From your fridge",
-            icon = Icons.Default.CameraAlt,
-            backgroundColor = MaterialTheme.colorScheme.secondaryContainer,
-            iconColor = MaterialTheme.colorScheme.secondary,
-            textColor = MaterialTheme.colorScheme.onSecondaryContainer
-        ),
-        HomeTileData(
-            id = "scan_fridge",
-            title = "Scan Fridge",
-            subtitle = "Check inventory",
-            icon = Icons.Default.PhotoCamera,
-            backgroundColor = MaterialTheme.colorScheme.tertiaryContainer,
-            iconColor = MaterialTheme.colorScheme.tertiary,
-            textColor = MaterialTheme.colorScheme.onTertiaryContainer
-        ),
-        HomeTileData(
-            id = "ai_suggestions",
-            title = "AI Chef",
-            subtitle = "Smart suggestions",
-            icon = Icons.Default.AutoAwesome,
-            backgroundColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.7f),
-            iconColor = MaterialTheme.colorScheme.primary,
-            textColor = MaterialTheme.colorScheme.onPrimaryContainer
-        ),
-        HomeTileData(
-            id = "meal_prep",
-            title = "Meal Prep",
-            subtitle = "Plan ahead",
-            icon = Icons.Default.Schedule,
-            backgroundColor = MaterialTheme.colorScheme.secondaryContainer.copy(alpha = 0.7f),
-            iconColor = MaterialTheme.colorScheme.secondary,
-            textColor = MaterialTheme.colorScheme.onSecondaryContainer
-        ),
-        HomeTileData(
-            id = "nutrition",
-            title = "Nutrition",
-            subtitle = "Track health",
-            icon = Icons.Default.FitnessCenter,
-            backgroundColor = MaterialTheme.colorScheme.tertiaryContainer.copy(alpha = 0.7f),
-            iconColor = MaterialTheme.colorScheme.tertiary,
-            textColor = MaterialTheme.colorScheme.onTertiaryContainer
-        )
-    )
-}

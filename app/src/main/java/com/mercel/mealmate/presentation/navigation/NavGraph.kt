@@ -1,6 +1,7 @@
 package com.mercel.mealmate.presentation.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -33,11 +34,13 @@ sealed class Screen(val route: String) {
 @Composable
 fun NavGraph(
     navController: NavHostController,
-    startDestination: String = Screen.Home.route
+    startDestination: String = Screen.Home.route,
+    modifier: Modifier = Modifier
 ) {
     NavHost(
         navController = navController,
-        startDestination = startDestination
+        startDestination = startDestination,
+        modifier = modifier
     ) {
         composable(Screen.Auth.route) {
             AuthScreen(
@@ -48,11 +51,29 @@ fun NavGraph(
                 }
             )
         }
+        
+        composable(Screen.Home.route) {
+            HomeScreen(
+                onNavigateToDiscover = {
+                    navController.navigate(Screen.Discover.route)
+                },
+                onNavigateToInstantMealMaker = {
+                    navController.navigate(Screen.InstantMeal.route)
+                }
+            )
+        }
+        
         composable(Screen.Discover.route) {
             DiscoverScreen(
                 onRecipeClick = { recipeId ->
                     navController.navigate(Screen.Detail.createRoute(recipeId))
                 }
+            )
+        }
+        
+        composable(Screen.InstantMeal.route) {
+            InstantMealScreen(
+                onNavigateBack = { navController.popBackStack() }
             )
         }
 
