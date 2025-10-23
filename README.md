@@ -1,7 +1,52 @@
 # MealMate - Smart Meal Planning Assistant
 
-## Problem Description
+<img src="images/home%20screen.png" alt="MealMate Home Screen" width="60%">
 
+## 📱 Introduction
+
+**MealMate** is an intelligent Android meal planning application that helps users discover recipes, plan weekly meals, generate shopping lists, and leverage AI to optimize their meal planning experience. Built with modern Android technologies including Kotlin, Jetpack Compose, and Material Design 3, MealMate provides a seamless, offline-first experience for health-conscious meal planning.
+
+### Problem Statement
+Many people struggle with meal planning, recipe discovery, and grocery shopping organization. MealMate solves this by providing an integrated platform that combines recipe discovery, intelligent meal planning, AI-powered suggestions, and shopping list generation—all in one app.
+
+### Key Screenshots
+
+#### Discover Screen - Browse & Search Recipes
+<img src="images/recipe%20search%20screen.png" alt="Recipe Search Screen" width="60%">
+*Browse recipes with advanced filtering by cuisine, diet, and intolerances*
+
+#### Recipe Details - Comprehensive Recipe Information
+<img src="images/recipe%20detail.png" alt="Recipe Detail Screen" width="60%">
+*View full recipe details with AI-generated summaries and nutritional information*
+
+#### Weekly Meal Plan - Organize Your Week
+<img src="images/weekly%20meal%20plan.png" alt="Weekly Meal Plan Screen" width="60%">
+*Plan meals for breakfast, lunch, and dinner across 7 days with AI-powered suggestions*
+
+#### AI-Generated Shopping List
+<img src="images/AI%20generated%20shoping%20list.png" alt="AI Generated Shopping List" width="60%">
+*Automatically generated and optimized shopping lists from your meal plan*
+
+#### Settings & Profile Management
+<img src="images/settings%20screen.png" alt="Settings Screen" width="60%">
+*Configure dietary preferences, calorie targets, and budget constraints*
+
+#### Authentication Screens
+<img src="images/login%20screen.png" alt="Login Screen" width="60%">
+*Secure user authentication with login and signup screens*
+
+<img src="images/signup%20screen.png" alt="Signup Screen" width="60%">
+*Create new account with email and password*
+
+#### User Profile
+<img src="images/profile%20screen.png" alt="Profile Screen" width="60%">
+*Manage user profile and personal preferences*
+
+#### AI Recipe Summary
+<img src="images/AI-generated%20recipe%20summary.png" alt="AI Recipe Summary" width="60%">
+*AI-powered recipe summaries highlighting key flavors and appeal*
+
+### Problem Statement
 Planning healthy, balanced meals for the week can be time-consuming and overwhelming. Many people struggle with:
 - Finding recipes that match their dietary preferences and restrictions
 - Creating a balanced weekly meal plan
@@ -36,21 +81,25 @@ Planning healthy, balanced meals for the week can be time-consuming and overwhel
   <img src="images/settings screen.png" alt="Settings Screen" width="240" style="max-width: 60%;">
 </div>
 
-## Features Overview
+## 🎯 Feature Implementation Documentation
 
-### Core Features (Grading Criteria Mapping)
+### Grading Criteria Mapping
 
-| Feature | Grading Criteria | Implementation |
-|---------|-----------------|-----------------|
-| **Recipe Discovery** | Retrofit (10 pts) | Search and filter recipes by cuisine, diet, and intolerances via Spoonacular API |
-| **Recipe Details** | Retrofit (10 pts) | View comprehensive recipe information including ingredients, instructions, and nutritional data |
-| **Favorites** | Room Database (10 pts) | Save favorite recipes using Room persistence layer |
-| **Weekly Meal Planning** | Room Database (10 pts) | Organize meals for breakfast, lunch, and dinner across 7 days with Room DAOs |
-| **AI Plan Generation** | GenAI Integration (10 pts) | Automatically generate balanced weekly meal plans using OpenAI API |
-| **Shopping List** | Room Database (10 pts) | Auto-generate shopping lists from meal plans with item checking |
-| **User Preferences** | DataStore (5 pts) | Customize dietary preferences, calorie targets, and budget using DataStore |
-| **Offline Support** | Clean Architecture (10 pts) | Access cached recipes and meal plans without internet connection |
-| **Background Sync** | WorkManager (5 pts) | Automatic cache refresh and weekly reminders via WorkManager |
+| Criterion | Points | Implementation | Code Reference |
+|-----------|--------|-----------------|-----------------|
+| **Navigation & Single Activity** | 10 | Single MainActivity with Navigation 3 graph managing 5 screens | [NavGraph.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/presentation/navigation/NavGraph.kt) |
+| **Room Database** | 10 | Entities, DAOs, CRUD operations for recipes, meals, shopping items | [MealMateDatabase.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/local/MealMateDatabase.kt) |
+| **DataStore** | 5 | User preferences persistence (diet, intolerances, calories, budget, theme) | [DataStoreModule.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/di/DataStoreModule.kt) |
+| **Retrofit** | 10 | Spoonacular API integration for recipe search and details | [SpoonacularApi.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/remote/api/SpoonacularApi.kt) |
+| **WorkManager** | 5 | Weekly reminders and cache sync tasks | [WeeklyReminderWorker.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/worker/WeeklyReminderWorker.kt) |
+| **Clean Architecture** | 10 | Layered structure (data, domain, presentation) with repositories and use cases | [Architecture Overview](https://github.com/vubangsi/mealmate/tree/main/app/src/main/java/com/mercel/mealmate) |
+| **Package Hierarchy** | 5 | Organized folder structure reflecting Clean Architecture | [Package Structure](https://github.com/vubangsi/mealmate/tree/main/app/src/main/java/com/mercel/mealmate) |
+| **Testing** | 10 | ViewModel unit tests with JUnit, MockK, and Turbine | [DiscoverViewModelTest.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/test/java/com/mercel/mealmate/presentation/discover/viewmodel/DiscoverViewModelTest.kt) |
+| **GenAI Integration** | 10 | OpenAI API for meal plan generation, recipe summaries, shopping list optimization | [AiRepositoryImpl.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/repository/AiRepositoryImpl.kt) |
+| **Documentation** | 10 | Comprehensive README with all required sections | This file |
+| **UI/UX Design** | 5 | Jetpack Compose + Material 3 with responsive layouts | [Presentation Layer](https://github.com/vubangsi/mealmate/tree/main/app/src/main/java/com/mercel/mealmate/presentation) |
+| **Functionality & Stability** | 5 | No crashes, all features working, proper error handling | [Error Handling](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/core/util/UiState.kt) |
+| **Wholeness / SCI** | 5 | SCI principle reflection on systematic thinking | See Wholeness / SCI Connection section |
 
 ### Advanced Features
 - **AI Recipe Summaries**: Generate engaging recipe descriptions using OpenAI API
@@ -354,28 +403,23 @@ Settings                          AI Generate Plan
 - Ensure you have the latest Android SDK tools installed
 - Check that API keys are properly set in `local.properties`
 
-## API Reference
+## 🔌 API Reference
 
-### Spoonacular API (Retrofit Integration - 10 pts)
+### Spoonacular API (Retrofit Integration)
 - **Base URL**: `https://api.spoonacular.com/`
 - **Endpoints Used**:
   - `GET /recipes/complexSearch` - Search recipes with filters
   - `GET /recipes/{id}/information` - Get detailed recipe information
-- **Implementation**: `data/remote/api/SpoonacularApi.kt`
+- **Implementation**: [SpoonacularApi.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/remote/api/SpoonacularApi.kt)
 
-### OpenAI API (GenAI Integration - 10 pts)
+### OpenAI API (GenAI Integration)
 - **Base URL**: `https://api.openai.com/`
 - **Model**: `gpt-3.5-turbo`
 - **Endpoints Used**:
   - `POST /v1/chat/completions` - Generate AI responses
-- **Use Cases**:
-  - Weekly meal plan generation
-  - Recipe summaries
-  - Shopping list optimization
-  - Ingredient substitutions
-- **Implementation**: `data/remote/api/OpenAiApi.kt` and `data/repository/AiRepositoryImpl.kt`
+- **Implementation**: [OpenAiApi.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/remote/api/OpenAiApi.kt)
 
-## Data Models & Room Database (10 pts)
+## 💾 Data Models & Room Database
 
 ### Domain Models
 
@@ -401,8 +445,8 @@ data class Recipe(
 data class MealEntry(
     val id: String,
     val recipeId: String,
-    val dayOfWeek: Int, // 1-7
-    val slot: MealSlot, // BREAKFAST, LUNCH, DINNER
+    val dayOfWeek: Int,
+    val slot: MealSlot,
     val recipeName: String,
     val recipeImageUrl: String?
 )
@@ -421,7 +465,7 @@ data class ShoppingItem(
 
 ### Room Database Implementation
 
-**Location**: `data/local/MealMateDatabase.kt`
+**Location**: [MealMateDatabase.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/main/java/com/mercel/mealmate/data/local/MealMateDatabase.kt)
 
 ```kotlin
 @Database(
@@ -467,12 +511,12 @@ abstract class MealMateDatabase : RoomDatabase() {
 - Graceful fallback when offline
 - Automatic sync via WorkManager
 
-## Testing (10 pts - Mandatory)
+## 🧪 Testing (Mandatory – ViewModel Only)
 
 ### Unit Tests
 The project includes comprehensive ViewModel unit tests using JUnit, MockK, and Turbine.
 
-**Test File**: `app/src/test/java/com/mercel/mealmate/presentation/discover/viewmodel/DiscoverViewModelTest.kt`
+**Test File**: [DiscoverViewModelTest.kt](https://github.com/vubangsi/mealmate/blob/main/app/src/test/java/com/mercel/mealmate/presentation/discover/viewmodel/DiscoverViewModelTest.kt)
 
 **Test Coverage**:
 - ✅ Initial state verification

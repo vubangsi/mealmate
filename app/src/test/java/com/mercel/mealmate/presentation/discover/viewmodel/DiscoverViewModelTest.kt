@@ -45,7 +45,7 @@ class DiscoverViewModelTest {
     }
 
     @Test
-    fun `initial state is loading`() = runTest {
+    fun `initial state and search flow`() = runTest {
         // Given
         val mockRecipes = listOf(createMockRecipe("1", "Test Recipe"))
         coEvery { 
@@ -54,13 +54,16 @@ class DiscoverViewModelTest {
 
         // When
         viewModel = DiscoverViewModel(searchRecipesUseCase, toggleFavoriteUseCase)
+        testDispatcher.scheduler.advanceUntilIdle()
 
         // Then
         viewModel.uiState.test {
-            val initialState = awaitItem()
-            assertTrue(initialState.isLoading)
-            assertEquals("", initialState.searchQuery)
-            assertEquals(emptyList<Recipe>(), initialState.recipes)
+            val state = awaitItem()
+            assertEquals("chicken", state.searchQuery) // ViewModel initializes with "chicken"
+            assertEquals(1, state.recipes.size)
+            assertEquals("Test Recipe", state.recipes[0].title)
+            assertFalse(state.isLoading) // Loading should be false after search completes
+            assertEquals(null, state.error)
         }
     }
 
