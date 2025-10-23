@@ -22,52 +22,52 @@
 ## 📸 App Screenshots
 
 ### Login & Authentication
-<img src="images/login screen.png" alt="Login Screen - User authentication with email and password" width="50%">
+<img src="images/login screen.png" alt="Login Screen - User authentication with email and password" width="40%">
 
 *Login screen with secure authentication and modern Material 3 design*
 
 ### Sign Up
-<img src="images/signup screen.png" alt="Sign Up Screen - New user registration" width="50%">
+<img src="images/signup screen.png" alt="Sign Up Screen - New user registration" width="40%">
 
 *User registration screen for creating new accounts*
 
 ### Home Screen
-<img src="images/home screen.png" alt="Home Screen - Main dashboard with featured recipes and quick actions" width="50%">
+<img src="images/home screen.png" alt="Home Screen - Main dashboard with featured recipes and quick actions" width="40%">
 
 *Main dashboard displaying featured recipes, quick access to discover recipes, and instant meal maker*
 
 ### Recipe Search & Discovery
-<img src="images/recipe search screen.png" alt="Recipe Search Screen - Browse and filter recipes by various criteria" width="50%">
+<img src="images/recipe search screen.png" alt="Recipe Search Screen - Browse and filter recipes by various criteria" width="40%">
 
 *Recipe discovery screen with search functionality, diet filters, and intolerance options*
 
 ### Recipe Details
-<img src="images/recipe detail.png" alt="Recipe Detail Screen - Comprehensive recipe information with ingredients and instructions" width="50%">
+<img src="images/recipe detail.png" alt="Recipe Detail Screen - Comprehensive recipe information with ingredients and instructions" width="40%">
 
 *Detailed recipe view showing ingredients, cooking instructions, nutritional information, and AI-generated summary*
 
 ### Weekly Meal Plan
-<img src="images/weekly meal plan.png" alt="Weekly Meal Plan - Organize meals for the entire week" width="50%">
+<img src="images/weekly meal plan.png" alt="Weekly Meal Plan - Organize meals for the entire week" width="40%">
 
 *Weekly meal planner with organized breakfast, lunch, and dinner slots for each day*
 
 ### Shopping List
-<img src="images/AI generated shoping list.png" alt="Shopping List - AI-optimized shopping list with checkboxes" width="50%">
+<img src="images/AI generated shoping list.png" alt="Shopping List - AI-optimized shopping list with checkboxes" width="40%">
 
 *Smart shopping list with AI optimization, organized by store sections, and check-off functionality*
 
 ### AI-Generated Recipe Summary
-<img src="images/AI-generated recipe summary.png" alt="AI Recipe Summary - OpenAI-powered recipe description" width="50%">
+<img src="images/AI-generated recipe summary.png" alt="AI Recipe Summary - OpenAI-powered recipe description" width="40%">
 
 *AI-generated recipe summary providing engaging descriptions and key highlights*
 
 ### Profile Screen
-<img src="images/profile screen.png" alt="Profile Screen - User profile with dietary preferences" width="50%">
+<img src="images/profile screen.png" alt="Profile Screen - User profile with dietary preferences" width="40%">
 
 *User profile displaying personal information and dietary preferences*
 
 ### Settings
-<img src="images/settings screen.png" alt="Settings Screen - App configuration and preferences" width="50%">
+<img src="images/settings screen.png" alt="Settings Screen - App configuration and preferences" width="40%">
 
 *Settings screen for managing dietary restrictions, calorie goals, theme preferences, and notifications*
 
@@ -926,7 +926,7 @@ The project includes comprehensive ViewModel unit tests covering:
 
 **Test Report Summary**:
 
-<img src="images/Test Report Summary.png" alt="Test Report Summary - Comprehensive test results" width="70%">
+<img src="images/Test Report Summary.png" alt="Test Report Summary - Comprehensive test results" width="100%">
 
 *Complete test report showing successful ViewModel testing with JUnit, MockK, and Turbine*
 
